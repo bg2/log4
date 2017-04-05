@@ -1,6 +1,6 @@
-package controleur;
+package application.controleur;
 
-import vues.ImageModele;
+import application.modele.ImageModele;
 
 public class ControleurImage {
 

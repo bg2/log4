@@ -1,4 +1,6 @@
-package vues;
+package application.modele;
+
+import application.vues.VueThumbnail;
 
 import java.awt.Image;
 

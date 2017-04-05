@@ -1,7 +1,6 @@
-package modele;
+package application.modele;
 
-import vues.VuePerspective;
-import vues.VuePerspective2;
+import application.vues.VuePerspective;
 
 public class PerspectiveModele {
 

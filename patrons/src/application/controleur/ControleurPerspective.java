@@ -1,6 +1,6 @@
-package controleur;
+package application.controleur;
 
-import modele.PerspectiveModele;
+import application.modele.PerspectiveModele;
 
 public class ControleurPerspective {
 

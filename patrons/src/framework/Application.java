@@ -1,103 +1,84 @@
-package framework; 
-import java.awt.*;
-import java.awt.event.MouseListener;
-import java.util.Observable;
-import java.util.Observer;
+package framework;
+
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 
-import controleur.ControleurImage;
-import controleur.ControleurPerspective;
-import modele.PerspectiveModele;
-import vues.ImageModele;
-import vues.VuePerspective;
-import vues.VuePerspective2;
-import vues.VueThumbnail;
+/**
+ * Created by Khoi on 2017-04-05.
+ */
 
 
-public class Application {
-
-		
-	private final static int HAUTEUR_FENETRE = 400;
-	private final static int LARGEUR_FENETRE = 1000;
-
-	private static String imageNom;
-	private static Image image = null;
-	protected static ImageModele imageModele = new ImageModele();
-	protected static PerspectiveModele perspectiveModele = new PerspectiveModele();
-	protected static PerspectiveModele perspectiveModele2 = new PerspectiveModele();
-	protected static ControleurImage controleurImage = new ControleurImage();
-	protected static ControleurPerspective controleurPerspective = new ControleurPerspective();
-
-
-	public static void initApplication() {
-		
-		System.out.println("application");
-		JFrame frame = new JFrame("Lab 4 : Les patrons");
-		JPanel vueMain = new JPanel();
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(new JPanel());
-		frame.setLayout(new BorderLayout());
-
-		initModeles(frame);
-		initVues(frame, image, vueMain);
-
-		controleurImage.addModel(imageModele);
-		controleurPerspective.addModel(perspectiveModele);
-		controleurPerspective.addModel(perspectiveModele2);
-
-		frame.getContentPane().add(vueMain);
-		//frame.getContentPane().add(menu, BorderLayout.NORTH);
-		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
-
-		frame.setResizable(false);
-		frame.pack();
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-	}
-
-	private static void initVues(JFrame frame, Image image, JPanel vueMain) {
-		
-		JPanel vueThumbnail = new JPanel();
-		JPanel vuePerspective = new JPanel();
-		JPanel vuePerspective2 = new JPanel();
-
-		vueMain.setLayout(new GridLayout(1, 3, 3, 3));
-		vueMain.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Vues",
-				TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
-
-		vueThumbnail.setLayout(new GridLayout(1, 3, -1, -1));
-		vueMain.add(vueThumbnail);
-		vueThumbnail
-				.setBorder(BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Thumbnail"));
-
-		vuePerspective.setLayout(new GridLayout(1, 3, -1, -1));
-		vueMain.add(vuePerspective);
-		vuePerspective.setBorder(
-				BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Perspective"));
-
-		vuePerspective2.setLayout(new GridLayout(1, 3, -1, -1));
-		vueMain.add(vuePerspective2);
-		vuePerspective2.setBorder(
-				BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Perspective"));
+/**
+ * The {@link Application} class describes a complete MVC application.
+ *
+ * <p>
+ * The class takes care of constructing the main application frame and passing
+ * it on to subclasses. To create a new MVC application one must therefore
+ * extend the {@link Application} class and implement the
+ * {@link #start(JFrame)} method:
+ *
+ * <pre>
+ * public final class MyApp extends application.Application {
+ *   protected void start(final JFrame frame) {
+ *     frame.getContentPane().add(...);
+ *   }
+ *
+ *   public static void main(final String[] args) {
+ *     new MyApp();
+ *   }
+ * }
+ * </pre>
+ *
+ * @see <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">
+ *      http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller</a>
+ */
+public abstract class Application {
 
 
-		VueThumbnail vue = new VueThumbnail();
-		VuePerspective vue2 = new VuePerspective();
-		VuePerspective2 vue3 = new VuePerspective2();
 
-	
-	}
+//    protected final Hashmap _register = Hashmap.getInstance();
 
-	private static void initModeles(JFrame frame) {
-		ImageModele imageModele = new ImageModele();
-		PerspectiveModele prespective = new PerspectiveModele();
-		// image= imageModele.getImage();
-		image = imageModele.getImage();
 
-	}
+    public Application() {
+        // Create the main frame of the application.
+        JFrame frame = new JFrame();
 
+        // And register it.
+ //       _register.add("window.frame", _frame);
+
+        // Exit the application when the main frame is closed.
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Start the application.
+
+        this.start(frame);
+//        // Initiates the models
+//        initModels();
+//
+//        // Initiates the controllers
+//        initControllers();
+//
+//        // Start the application.
+//        start();
+
+        // Make the application frame visible.
+        frame.setVisible(true);
+    }
+
+
+  //  protected abstract void initControllers();
+
+
+ //   protected abstract void initModels();
+
+    /**
+     * Start the {@link Application}.
+     *
+     * <p>
+     * This method is called as part of the {@link Application} initialization.
+     * @param frame The main frame of the {@link Application}.
+     */
+
+    protected abstract void start(final JFrame frame);
+
+   // protected abstract void initApplication();
 }
-
-
