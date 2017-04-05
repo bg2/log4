@@ -11,7 +11,7 @@ import application.modele.ImageModele;
 import application.vues.VuePerspective;
 import application.vues.VuePerspective2;
 import application.vues.VueThumbnail;
-
+import application.vues.Menu;
 
 public class Application extends framework.Application{
 
@@ -88,20 +88,25 @@ public class Application extends framework.Application{
 	
 	}
 
-	private  void initModeles(JFrame frame) {
-		ImageModele imageModele = new ImageModele();
-		PerspectiveModele prespective = new PerspectiveModele();
-		// image= imageModele.getImage();
-		image = imageModele.getImage();
-
-	}
+//	private  void initModeles(JFrame frame) {
+//		ImageModele imageModele = new ImageModele();
+//		PerspectiveModele prespective = new PerspectiveModele();
+//		// image= imageModele.getImage();
+//		imageModele = imageModele.getImage();
+//
+//	}
 
 	@Override
 	protected void start(JFrame frame) {
+
+
 		System.out.println("Starting the application...");
 		frame.setTitle("Lab 4 : Les patrons");
 		frame.setResizable(false);
 		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
+
+		Menu menu = new Menu(imageModele);
+		frame.getContentPane().add(menu, BorderLayout.NORTH);
 
 		JPanel vueMain = new JPanel();
 		frame.add(vueMain);
