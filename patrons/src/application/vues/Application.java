@@ -1,4 +1,4 @@
-package application;
+package application.vues;
 
 import java.awt.*;
 import javax.swing.*;
@@ -33,76 +33,6 @@ public class Application extends framework.Application{
 	protected  ControleurImage controleurImage;
 	protected  ControleurPerspective controleurPerspective;
 
-
-//
-//	public  void initApplication() {
-//
-//		System.out.println("application");
-//		JFrame frame = new JFrame("Lab 4 : Les patrons");
-//		JPanel vueMain = new JPanel();
-//
-//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		frame.add(new JPanel());
-//		frame.setLayout(new BorderLayout());
-//
-//		initModeles(frame);
-//		initVues(frame, image, vueMain);
-//
-//		controleurImage.addModel(imageModele);
-//		controleurPerspective.addModel(perspectiveModele);
-//		controleurPerspective.addModel(perspectiveModele2);
-//
-//		frame.getContentPane().add(vueMain);
-//		//frame.getContentPane().add(menu, BorderLayout.NORTH);
-//		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
-//
-//		frame.setResizable(false);
-//	//	frame.pack();
-//		frame.setLocationRelativeTo(null);
-//		frame.setVisible(true);
-//	}
-
-	private  void initVues(JFrame frame, Image image, JPanel vueMain) {
-//
-//		JPanel vueThumbnail = new JPanel();
-//		JPanel vuePerspective = new JPanel();
-//		JPanel vuePerspective2 = new JPanel();
-//
-//		vueMain.setLayout(new GridLayout(1, 3, 3, 3));
-//		vueMain.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Vues",
-//				TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
-//
-//		vueThumbnail.setLayout(new GridLayout(1, 3, -1, -1));
-//		vueMain.add(vueThumbnail);
-//		vueThumbnail
-//				.setBorder(BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Thumbnail"));
-//
-//		vuePerspective.setLayout(new GridLayout(1, 3, -1, -1));
-//		vueMain.add(vuePerspective);
-//		vuePerspective.setBorder(
-//				BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Perspective"));
-//
-//		vuePerspective2.setLayout(new GridLayout(1, 3, -1, -1));
-//		vueMain.add(vuePerspective2);
-//		vuePerspective2.setBorder(
-//				BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Perspective"));
-//
-//
-//		VueThumbnail vue = new VueThumbnail();
-//		VuePerspective vue2 = new VuePerspective();
-//		VuePerspective2 vue3 = new VuePerspective2();
-
-	
-	}
-
-//	private  void initModeles(JFrame frame) {
-//		ImageModele imageModele = new ImageModele();
-//		PerspectiveModele prespective = new PerspectiveModele();
-//		// image= imageModele.getImage();
-//		imageModele = imageModele.getImage();
-//
-//	}
-
 	@Override
 	protected void initControleurs() {
 		this.controleurImage = new ControleurImage();
@@ -123,18 +53,13 @@ public class Application extends framework.Application{
 		frame.setResizable(false);
 		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
 
-		Menu menu = new Menu(this.imageModele);
+		Menu menu = new Menu(this.controleurImage);
 		frame.getContentPane().add(menu, BorderLayout.NORTH);
 
 		JPanel vueMain = new JPanel();
 		frame.add(vueMain);
 
 		initVues(vueMain);
-
-
-		VueThumbnail vue = new VueThumbnail();
-		VuePerspective vue2 = new VuePerspective();
-		VuePerspective vue3 = new VuePerspective();
 
 		//tell Model about View
 		this.imageModele.addObserver(vue);
@@ -155,6 +80,7 @@ public class Application extends framework.Application{
 //
 //		vue3.addMouseListener(controleurPerspective);
 //		vue3.addMouseWheelListener(controleurPerspective);
+
 
 	}
 
@@ -195,7 +121,7 @@ public class Application extends framework.Application{
 
 		//tell View about Controller (on the jpanel???)
 		thumbnail.addMouseListener(this.controleurImage);
-//
+
 		perspective.addMouseListener(this.controleurPerspective);
 		perspective.addMouseWheelListener(this.controleurPerspective);
 

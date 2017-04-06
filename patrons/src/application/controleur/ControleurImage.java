@@ -16,6 +16,10 @@ import java.util.EventListener;
 
 public class ControleurImage extends Controleur<ImageModele, VueThumbnail> implements EventListener, MouseListener {
 
+	public void ouvrirFichier(File fichierImage){
+		modele.ouvrirFichier(fichierImage);
+	}
+
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("Image");
 		System.out.println("Controller: acting on Model");

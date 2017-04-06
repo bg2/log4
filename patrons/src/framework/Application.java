@@ -17,7 +17,7 @@ import javax.swing.*;
  * {@link #start(JFrame)} method:
  *
  * <pre>
- * public final class MyApp extends application.Application {
+ * public final class MyApp extends application.vues.Application {
  *   protected void start(final JFrame frame) {
  *     frame.getContentPane().add(...);
  *   }

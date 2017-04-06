@@ -11,16 +11,17 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.*;
 
+import application.controleur.ControleurImage;
 import application.modele.ImageModele;
 import com.sun.glass.events.KeyEvent;
 
-public class Menu extends JMenuBar{
-    private ImageModele imageModele;
+public class Menu extends JMenuBar {
+    private ControleurImage controleurImage;
     /**
      * Constructeur
      */
-    public Menu(ImageModele imageModele) {
-        this.imageModele = imageModele;
+    public Menu(ControleurImage controleurImage) {
+        this.controleurImage = controleurImage;
         System.out.println("Menu createur");
         initialiserMenu();
 
@@ -111,6 +112,7 @@ public class Menu extends JMenuBar{
             //		String filePath = fc.getCurrentDirectory().toString() + "/" + fc.getSelectedFile().getName();
             File fichierImage = fc.getSelectedFile();
 	//		imageModele.ouvrirFichier(fichierImage); u want the controlleur to call the image
+            controleurImage.ouvrirFichier(fichierImage);
         } else if (response == JFileChooser.CANCEL_OPTION){
             System.out.println("L'opération a été annulée.");
         }
