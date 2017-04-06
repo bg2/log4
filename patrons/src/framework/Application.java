@@ -49,10 +49,12 @@ public abstract class Application {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Start the application.
+        initModeles();
+        initControleurs();
 
         this.start(frame);
 //        // Initiates the models
-//        initModels();
+        //  initModeles();
 //
 //        // Initiates the controllers
 //        initControllers();
@@ -65,10 +67,10 @@ public abstract class Application {
     }
 
 
-  //  protected abstract void initControllers();
+     protected abstract void initControleurs();
 
 
- //   protected abstract void initModels();
+     protected abstract void initModeles();
 
     /**
      * Start the {@link Application}.

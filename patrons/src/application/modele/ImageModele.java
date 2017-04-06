@@ -24,10 +24,10 @@ public class ImageModele extends Modele {
 
 
 
-	public void addObserver(VueThumbnail vue) {
-		// TODO Auto-generated method stub
-		// DONT NEED THIS METHOD
-	}
+//	public void addObserver(VueThumbnail vue) {
+//		// TODO Auto-generated method stub
+//		// DONT NEED THIS METHOD
+//	}
 
 	public void ouvrirFichier(File fichierImage) {
 		try {
@@ -41,5 +41,5 @@ public class ImageModele extends Modele {
 	}
 
 	public void chargerImage(){}
-	
+
 }

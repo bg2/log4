@@ -13,6 +13,7 @@ import application.vues.VuePerspective2;
 import application.vues.VueThumbnail;
 import application.vues.Menu;
 
+
 public class Application extends framework.Application{
 
 	private final int LARGEUR_FENETRE = 1000;
@@ -21,11 +22,17 @@ public class Application extends framework.Application{
 
 	private  String imageNom;
 	private  Image image = null;
-	protected  ImageModele imageModele = new ImageModele();
-	protected  PerspectiveModele perspectiveModele = new PerspectiveModele();
-	protected  PerspectiveModele perspectiveModele2 = new PerspectiveModele();
-	protected  ControleurImage controleurImage = new ControleurImage();
-	protected  ControleurPerspective controleurPerspective = new ControleurPerspective();
+	protected ImageModele imageModele;
+	protected  PerspectiveModele perspectiveModele;
+	protected  PerspectiveModele perspectiveModele2 ;
+
+	protected VueThumbnail vue;
+	protected VuePerspective vue2;
+	protected VuePerspective vue3;
+
+	protected  ControleurImage controleurImage;
+	protected  ControleurPerspective controleurPerspective;
+
 
 //
 //	public  void initApplication() {
@@ -97,29 +104,61 @@ public class Application extends framework.Application{
 //	}
 
 	@Override
+	protected void initControleurs() {
+		this.controleurImage = new ControleurImage();
+		this.controleurPerspective = new ControleurPerspective();
+	}
+
+	@Override
+	protected void initModeles() {
+		this.imageModele = new ImageModele();
+		this.perspectiveModele = new PerspectiveModele();
+		this.perspectiveModele2 = new PerspectiveModele();
+	}
+
+	@Override
 	protected void start(JFrame frame) {
-
-
 		System.out.println("Starting the application...");
 		frame.setTitle("Lab 4 : Les patrons");
 		frame.setResizable(false);
 		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
 
-		Menu menu = new Menu(imageModele);
+		Menu menu = new Menu(this.imageModele);
 		frame.getContentPane().add(menu, BorderLayout.NORTH);
 
 		JPanel vueMain = new JPanel();
 		frame.add(vueMain);
 
-		setJPanelLayout(vueMain);
+		initVues(vueMain);
 
 
 		VueThumbnail vue = new VueThumbnail();
 		VuePerspective vue2 = new VuePerspective();
-		VuePerspective2 vue3 = new VuePerspective2();
+		VuePerspective vue3 = new VuePerspective();
+
+		//tell Model about View
+		this.imageModele.addObserver(vue);
+		this.perspectiveModele.addObserver(vue2);
+		this.perspectiveModele2.addObserver(vue3);
+
+//		perspectiveModele.addObserver(vue2);
+//		perspectiveModele2.addObserver(vue3);
+//****************************************************************
+//		//tell View about Controller (DOESNT WORK???? not jpanel)
+//		vue.addMouseListener(this.controleurImage);
+//
+//		vue2.addMouseListener(this.controleurPerspective);
+//		vue2.addMouseWheelListener(this.controleurPerspective);
+//
+//		vue3.addMouseListener(this.controleurPerspective);
+//		vue3.addMouseWheelListener(this.controleurPerspective);
+//
+//		vue3.addMouseListener(controleurPerspective);
+//		vue3.addMouseWheelListener(controleurPerspective);
+
 	}
 
-	private void setJPanelLayout(JPanel jPanel){
+	private void initVues(JPanel jPanel){
 		JPanel vueMain = jPanel;
 
 		JPanel thumbnail = new JPanel();
@@ -144,6 +183,24 @@ public class Application extends framework.Application{
 		vueMain.add(perspective2);
 		perspective2.setBorder(
 				BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Perspective"));
+
+
+		this.vue = new VueThumbnail();
+		this.vue2 = new VuePerspective();
+		this.vue3 = new VuePerspective();
+
+		thumbnail.add(vue);
+		perspective.add(vue2);
+		perspective2.add(vue3);
+
+		//tell View about Controller (on the jpanel???)
+		thumbnail.addMouseListener(this.controleurImage);
+//
+		perspective.addMouseListener(this.controleurPerspective);
+		perspective.addMouseWheelListener(this.controleurPerspective);
+
+		perspective2.addMouseListener(this.controleurPerspective);
+		perspective2.addMouseWheelListener(this.controleurPerspective);
 	}
 }
 

@@ -110,7 +110,7 @@ public class Menu extends JMenuBar{
         if (response == JFileChooser.APPROVE_OPTION) {
             //		String filePath = fc.getCurrentDirectory().toString() + "/" + fc.getSelectedFile().getName();
             File fichierImage = fc.getSelectedFile();
-			imageModele.ouvrirFichier(fichierImage);
+	//		imageModele.ouvrirFichier(fichierImage); u want the controlleur to call the image
         } else if (response == JFileChooser.CANCEL_OPTION){
             System.out.println("L'opération a été annulée.");
         }
