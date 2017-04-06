@@ -9,7 +9,10 @@ import java.util.Observable;
 
 public class VueThumbnail extends Vue<ImageModele, ControleurImage> {
 
-
+    public VueThumbnail(ImageModele imageModele, ControleurImage controleurImage){
+        modele(imageModele);
+        controleur(controleurImage);
+    }
     @Override
     public void paint(final Graphics g) {
         super.paintComponent(g);
@@ -26,6 +29,7 @@ public class VueThumbnail extends Vue<ImageModele, ControleurImage> {
 
     @Override
     public void update(final Observable model, final Object value) {
+
         repaint();
     }
 }

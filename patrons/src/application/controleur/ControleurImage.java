@@ -3,6 +3,7 @@ package application.controleur;
 import application.modele.ImageModele;
 import application.vues.VueThumbnail;
 import framework.Controleur;
+import framework.Modele;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -15,6 +16,11 @@ import java.util.EventListener;
 
 
 public class ControleurImage extends Controleur<ImageModele, VueThumbnail> implements EventListener, MouseListener {
+
+	public ControleurImage(ImageModele imageModele, VueThumbnail vue){
+		modele(imageModele);
+		vue(vue);
+	}
 
 	public void ouvrirFichier(File fichierImage){
 		modele.ouvrirFichier(fichierImage);

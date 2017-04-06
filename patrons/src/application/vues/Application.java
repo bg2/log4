@@ -32,11 +32,13 @@ public class Application extends framework.Application{
 
 	protected  ControleurImage controleurImage;
 	protected  ControleurPerspective controleurPerspective;
+	protected  ControleurPerspective controleurPerspective2;
 
 	@Override
 	protected void initControleurs() {
-		this.controleurImage = new ControleurImage();
-		this.controleurPerspective = new ControleurPerspective();
+		this.controleurImage = new ControleurImage(imageModele, vue);
+		this.controleurPerspective = new ControleurPerspective(perspectiveModele, vue2);
+		this.controleurPerspective2 = new ControleurPerspective(perspectiveModele2, vue3);
 	}
 
 	@Override
@@ -111,9 +113,9 @@ public class Application extends framework.Application{
 				BorderFactory.createTitledBorder(BorderFactory.createRaisedBevelBorder(), "Vue Perspective"));
 
 
-		this.vue = new VueThumbnail();
-		this.vue2 = new VuePerspective();
-		this.vue3 = new VuePerspective();
+		this.vue = new VueThumbnail(imageModele, controleurImage);
+		this.vue2 = new VuePerspective(perspectiveModele, controleurPerspective);
+		this.vue3 = new VuePerspective(perspectiveModele2, controleurPerspective2);
 
 		thumbnail.add(vue);
 		perspective.add(vue2);
