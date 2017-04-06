@@ -55,7 +55,7 @@ public class Application extends framework.Application{
 		frame.setResizable(false);
 		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
 
-		Menu menu = new Menu(this.controleurImage);
+		Menu menu = new Menu(this.controleurImage, this.controleurPerspective, this.controleurPerspective2);
 		frame.getContentPane().add(menu, BorderLayout.NORTH);
 
 		JPanel vueMain = new JPanel();
@@ -127,8 +127,8 @@ public class Application extends framework.Application{
 		perspective.addMouseListener(this.controleurPerspective);
 		perspective.addMouseWheelListener(this.controleurPerspective);
 
-		perspective2.addMouseListener(this.controleurPerspective);
-		perspective2.addMouseWheelListener(this.controleurPerspective);
+		perspective2.addMouseListener(this.controleurPerspective2);
+		perspective2.addMouseWheelListener(this.controleurPerspective2);
 	}
 }
 

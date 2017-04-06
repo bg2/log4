@@ -29,7 +29,7 @@ public class VueThumbnail extends Vue<ImageModele, ControleurImage> {
 
     @Override
     public void update(final Observable model, final Object value) {
-
+        System.out.println("test");
         repaint();
     }
 }

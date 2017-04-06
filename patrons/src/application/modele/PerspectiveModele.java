@@ -36,7 +36,7 @@ public class PerspectiveModele extends Modele {
 			e.printStackTrace();
 		}
 		setChanged();
-		notifyObservers(image);
+		notifyObservers();
 
 	}
 

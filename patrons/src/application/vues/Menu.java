@@ -12,16 +12,23 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 
 import application.controleur.ControleurImage;
+import application.controleur.ControleurPerspective;
 import application.modele.ImageModele;
 import com.sun.glass.events.KeyEvent;
+import framework.Controleur;
 
 public class Menu extends JMenuBar {
     private ControleurImage controleurImage;
+    private ControleurPerspective controleurPerspective;
+    private ControleurPerspective controleurPerspective2;
     /**
      * Constructeur
      */
-    public Menu(ControleurImage controleurImage) {
+    public Menu(ControleurImage controleurImage, ControleurPerspective controleurPerspective, ControleurPerspective
+            controleurPerspective2) {
         this.controleurImage = controleurImage;
+        this.controleurPerspective = controleurPerspective;
+        this.controleurPerspective2 = controleurPerspective2;
         System.out.println("Menu createur");
         initialiserMenu();
 
@@ -113,6 +120,8 @@ public class Menu extends JMenuBar {
             File fichierImage = fc.getSelectedFile();
 	//		imageModele.ouvrirFichier(fichierImage); u want the controlleur to call the image
             controleurImage.ouvrirFichier(fichierImage);
+            controleurPerspective.ouvrirFichier(fichierImage);
+            controleurPerspective2.ouvrirFichier(fichierImage);
         } else if (response == JFileChooser.CANCEL_OPTION){
             System.out.println("L'opération a été annulée.");
         }
