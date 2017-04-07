@@ -19,7 +19,7 @@
 2017-03-22	Version initiale
  *******************************************************/
 
-package application.commandes;
+package application.controleur.commandes;
 
 /**
  * Created by Khoi on 2017-04-07.

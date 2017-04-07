@@ -27,7 +27,7 @@ public class VuePerspective extends Vue<PerspectiveModele, ControleurPerspective
     public void paint(final Graphics g) {
         super.paintComponent(g);
         try {
-            g.drawImage(modele.getImage(), 0, 0, null);
+            g.drawImage(modele.getImage(), 0, 0, modele.getImageScaledWidth(), modele.getImageScaledHeight(),null);
         } catch (final NullPointerException e) {
         }
     }
