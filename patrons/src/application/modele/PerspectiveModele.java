@@ -3,6 +3,9 @@ package application.modele;
 import framework.Modele;
 
 import javax.imageio.ImageIO;
+
+
+
 import java.awt.*;
 import java.io.File;
 
@@ -57,6 +60,25 @@ public class PerspectiveModele extends Modele {
 
 	public int getImageScaledWidth() {
 		return (int) (image.getWidth(null) * zoomIndex);
+	}
+	
+	public void moveAction(final int x, final int y) {
+
+		setPosition(x, y);
+		
+	}
+
+	
+	public void setPosition(final int positionXfinale, final int positionYfinale) {
+		int positionXinitiale = 0;
+		int positionYinitiale = 0;
+		positionXinitiale = positionXinitiale + positionXfinale;
+		positionYinitiale = positionYinitiale + positionXfinale;
+		try {
+			setChanged();
+			this.notifyObservers();
+		} catch (final Exception e) {
+		}
 	}
 
 }
