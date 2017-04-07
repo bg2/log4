@@ -17,6 +17,12 @@ import java.util.EventListener;
 public class ControleurPerspective extends Controleur<PerspectiveModele, VuePerspective> implements EventListener, MouseListener,
 		MouseWheelListener{
 
+	int positionXinitiale = 0;
+	int positionYinitiale =0;
+	int positionYfinale=0; 
+	int positionXfinale =0;
+	int deplacement=0;
+	
 	public ControleurPerspective(PerspectiveModele perspectiveModele, VuePerspective vue){
 		modele(perspectiveModele);
 		vue(vue);
@@ -46,16 +52,6 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		System.out.println("Controller: acting on Model");
 	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		System.out.println("Perspective released");
-		System.out.println("Controller: acting on Model");
-	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
@@ -77,6 +73,38 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		if (this != null)
 			modele.setZoomScale(e);
 	}
+	
+	@Override
+	public void mousePressed(final MouseEvent e) {
+		positionXinitiale = e.getX();
+		positionYinitiale = e.getY();
+
+	}
+
+	@Override
+	public void mouseReleased(final MouseEvent e) {
+		System.out.println("Perspective released");
+		System.out.println("Controller: acting on Model");
+		positionYfinale = e.getY();
+		positionXfinale = e.getX();
+		modele.moveAction(mouvementX(), mouvementY());
+
+	}
+	
+	private int mouvementY() {
+		positionYfinale;
+		positionYinitiale;
+		deplacement = positionYfinale - positionYinitiale;
+		return deplacement;
+	}
+	
+	private int mouvementX() {
+		positionYfinale;
+		positionYinitiale;
+		deplacement = positionYfinale - positionYinitiale;
+		return deplacement;
+	}
+
 }
 
 

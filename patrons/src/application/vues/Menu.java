@@ -14,7 +14,8 @@ import javax.swing.filechooser.*;
 import application.controleur.ControleurImage;
 import application.controleur.ControleurPerspective;
 import application.modele.ImageModele;
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.*;
+//import com.sun.glass.events.KeyEvent;
 import framework.Controleur;
 
 public class Menu extends JMenuBar {

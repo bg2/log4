@@ -17,6 +17,9 @@ public class VueThumbnail extends Vue<ImageModele, ControleurImage> {
     public void paint(final Graphics g) {
         super.paintComponent(g);
         try {
+        	if(modele.getImage().getWidth(null)>300||modele.getImage().getHeight(null)>300)         		
+        		g.drawImage(modele.getImage(), 0, 0,300, 200, null);
+        	else
             g.drawImage(modele.getImage(), 0, 0, null);
         } catch (final NullPointerException e) {
         }
