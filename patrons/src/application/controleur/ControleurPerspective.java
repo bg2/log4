@@ -70,7 +70,7 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		System.out.println("Mousewheel rotating");
-		zoom(-e.getWheelRotation());
+		zoom(e.getWheelRotation());
 	}
 
 	public void zoom(int e){
