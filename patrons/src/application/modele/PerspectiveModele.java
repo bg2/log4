@@ -6,6 +6,7 @@ import framework.Modele;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
+import java.util.Observable;
 
 public class PerspectiveModele extends Modele {
 

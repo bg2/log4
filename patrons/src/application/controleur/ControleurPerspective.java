@@ -6,6 +6,7 @@ import application.vues.VuePerspective;
 import application.vues.VueThumbnail;
 import framework.Controleur;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
@@ -21,8 +22,8 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		vue(vue);
 	}
 
-	public void ouvrirFichier(File fichierImage){
-		modele.ouvrirFichier(fichierImage);
+	public void ouvrirFichier(Image image){
+		modele.setImage(image);
 	}
 
 

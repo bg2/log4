@@ -3,9 +3,9 @@ package application.vues;
 /**
  * Created by Khoi on 2017-04-05.
  */
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Desktop;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -118,10 +118,10 @@ public class Menu extends JMenuBar {
         if (response == JFileChooser.APPROVE_OPTION) {
             //		String filePath = fc.getCurrentDirectory().toString() + "/" + fc.getSelectedFile().getName();
             File fichierImage = fc.getSelectedFile();
-	//		imageModele.ouvrirFichier(fichierImage); u want the controlleur to call the image
-            controleurImage.ouvrirFichier(fichierImage);
-            controleurPerspective.ouvrirFichier(fichierImage);
-            controleurPerspective2.ouvrirFichier(fichierImage);
+
+            Image image = controleurImage.ouvrirFichier(fichierImage);
+            controleurPerspective.ouvrirFichier(image);
+            controleurPerspective2.ouvrirFichier(image);
         } else if (response == JFileChooser.CANCEL_OPTION){
             System.out.println("L'opération a été annulée.");
         }

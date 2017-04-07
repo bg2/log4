@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
@@ -22,8 +23,8 @@ public class ControleurImage extends Controleur<ImageModele, VueThumbnail> imple
 		vue(vue);
 	}
 
-	public void ouvrirFichier(File fichierImage){
-		modele.ouvrirFichier(fichierImage);
+	public Image ouvrirFichier(File fichierImage){
+		return modele.ouvrirFichier(fichierImage);
 	}
 
 	public void mouseClicked(MouseEvent e) {

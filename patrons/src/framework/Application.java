@@ -50,7 +50,7 @@ public abstract class Application {
 
         // Start the application.
         initModeles();
-        initControleurs();
+    initControleurs();
 
         this.start(frame);
 //        // Initiates the models
@@ -67,7 +67,7 @@ public abstract class Application {
     }
 
 
-     protected abstract void initControleurs();
+    protected abstract void initControleurs();
 
 
      protected abstract void initModeles();

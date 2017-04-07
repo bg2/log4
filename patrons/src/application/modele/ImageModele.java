@@ -29,7 +29,7 @@ public class ImageModele extends Modele {
 //		// DONT NEED THIS METHOD
 //	}
 
-	public void ouvrirFichier(File fichierImage) {
+	public Image ouvrirFichier(File fichierImage) {
 		try {
 			image = ImageIO.read(fichierImage);
 		} catch (Exception e) {
@@ -38,6 +38,7 @@ public class ImageModele extends Modele {
 		setChanged();
 		notifyObservers();
 
+	return image;
 	}
 
 	public void chargerImage(){}

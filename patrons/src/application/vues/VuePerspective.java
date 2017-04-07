@@ -34,7 +34,7 @@ public class VuePerspective extends Vue<PerspectiveModele, ControleurPerspective
 
     @Override
     public void update(final Observable model, final Object value) {
-        System.out.print("repaint");
+        System.out.println("tetstst");
         repaint();
     }
 
