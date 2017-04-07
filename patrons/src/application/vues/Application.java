@@ -8,10 +8,6 @@ import application.controleur.ControleurImage;
 import application.controleur.ControleurPerspective;
 import application.modele.PerspectiveModele;
 import application.modele.ImageModele;
-import application.vues.VuePerspective;
-import application.vues.VuePerspective2;
-import application.vues.VueThumbnail;
-import application.vues.Menu;
 
 
 public class Application extends framework.Application{
