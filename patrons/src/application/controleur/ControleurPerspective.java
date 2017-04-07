@@ -22,8 +22,8 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		vue(vue);
 	}
 
-	public void ouvrirFichier(Image image){
-		modele.setImage(image);
+	public void ouvrirFichier(File fichierImage){
+		modele.ouvrirFichier(fichierImage);
 	}
 
 

@@ -23,8 +23,8 @@ public class ControleurImage extends Controleur<ImageModele, VueThumbnail> imple
 		vue(vue);
 	}
 
-	public Image ouvrirFichier(File fichierImage){
-		return modele.ouvrirFichier(fichierImage);
+	public void ouvrirFichier(File fichierImage){
+		modele.ouvrirFichier(fichierImage);
 	}
 
 	public void mouseClicked(MouseEvent e) {

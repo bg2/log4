@@ -119,14 +119,12 @@ public class Menu extends JMenuBar {
             //		String filePath = fc.getCurrentDirectory().toString() + "/" + fc.getSelectedFile().getName();
             File fichierImage = fc.getSelectedFile();
 
-            Image image = controleurImage.ouvrirFichier(fichierImage);
-            controleurPerspective.ouvrirFichier(image);
-            controleurPerspective2.ouvrirFichier(image);
+            controleurImage.ouvrirFichier(fichierImage);
+            controleurPerspective.ouvrirFichier(fichierImage);
+            controleurPerspective2.ouvrirFichier(fichierImage);
         } else if (response == JFileChooser.CANCEL_OPTION){
             System.out.println("L'opération a été annulée.");
         }
 
-//		setChanged();
-//		notifyObservers();
     }
 }

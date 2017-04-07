@@ -24,12 +24,6 @@ public class PerspectiveModele extends Modele {
 	}
 
 
-
-//	public void addObserver(VueThumbnail vue) {
-//		// TODO Auto-generated method stub
-//		// DONT NEED THIS METHOD
-//	}
-
 	public void ouvrirFichier(File fichierImage) {
 		try {
 			image = ImageIO.read(fichierImage);
@@ -42,13 +36,5 @@ public class PerspectiveModele extends Modele {
 	}
 
 	public void chargerImage(){}
-
-
-	public void addObserver(VuePerspective vue2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 
 }

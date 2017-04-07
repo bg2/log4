@@ -16,6 +16,7 @@ public class VuePerspective extends Vue<PerspectiveModele, ControleurPerspective
         controleur(controleurPerspective);
     }
 
+
     @Override
     protected void render() {
 

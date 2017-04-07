@@ -22,14 +22,7 @@ public class ImageModele extends Modele {
 		notifyObservers();
 	}
 
-
-
-//	public void addObserver(VueThumbnail vue) {
-//		// TODO Auto-generated method stub
-//		// DONT NEED THIS METHOD
-//	}
-
-	public Image ouvrirFichier(File fichierImage) {
+	public void ouvrirFichier(File fichierImage) {
 		try {
 			image = ImageIO.read(fichierImage);
 		} catch (Exception e) {
@@ -38,7 +31,7 @@ public class ImageModele extends Modele {
 		setChanged();
 		notifyObservers();
 
-	return image;
+
 	}
 
 	public void chargerImage(){}
