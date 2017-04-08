@@ -85,7 +85,7 @@ public class GestionnaireDeCommande {
     }
 
     public void refaire2() {
-        if(!isEmptyCommandesAnnuleesVue1()) {
+        if(!isEmptyCommandesAnnuleesVue2()) {
             Commande derniereCommande = commandesAnnuleesVue2.pop();
             derniereCommande.execute();
             commandesFaitesVue2.push(derniereCommande);
@@ -97,6 +97,14 @@ public class GestionnaireDeCommande {
         System.out.println("COMMADE EXECUTE");
         commandesFaitesVue1.push(commande);
     }
+
+    public void execute2(Commande commande) {
+        commande.execute();
+        System.out.println("COMMADE EXECUTE");
+        commandesFaitesVue2.push(commande);
+    }
+
+
 //
 //    ArrayList<PerspectiveModele> historyList;
 //

@@ -15,7 +15,6 @@ public class PerspectiveModele extends Modele {
 	private double zoomIndex = 1;
 
 
-
 	public Image getImage() {
 		return image;
 	}

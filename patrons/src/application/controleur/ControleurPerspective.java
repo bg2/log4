@@ -17,6 +17,8 @@ import java.util.EventListener;
 public class ControleurPerspective extends Controleur<PerspectiveModele, VuePerspective> implements EventListener, MouseListener,
 		MouseWheelListener{
 
+	GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+
 	int positionXinitiale = 0;
 	int positionYinitiale =0;
 	int positionYfinale=0; 
@@ -36,15 +38,15 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 
 
 
-	public void addModel(ImageModele imageModele) {
-		// TODO Auto-generated method stub
-
-	}
-
-		public void addModel (PerspectiveModele perspectiveModele){
-		// TODO Auto-generated method stub
-
-	}
+//	public void addModel(ImageModele imageModele) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//		public void addModel (PerspectiveModele perspectiveModele){
+//		// TODO Auto-generated method stub
+//
+//	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -66,7 +68,7 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		System.out.println("Mousewheel rotating");
-		zoom(e.getWheelRotation());
+		zoom(-e.getWheelRotation());
 	}
 
 	public void zoom(double e){
@@ -108,11 +110,13 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	}
 
 
-	public void undo() {
-		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
-		if(!gestionnaireDeCommande.IsEmptyCommandesFaitesVue1()) {
+	public void defaire() {
 			gestionnaireDeCommande.defaire1();
-		}
+	}
+
+
+	public void refaire() {
+		gestionnaireDeCommande.refaire1();
 	}
 }
 

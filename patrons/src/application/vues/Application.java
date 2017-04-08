@@ -6,6 +6,7 @@ import javax.swing.border.TitledBorder;
 
 import application.controleur.ControleurImage;
 import application.controleur.ControleurPerspective;
+import application.controleur.ControleurPerspective2;
 import application.modele.PerspectiveModele;
 import application.modele.ImageModele;
 
@@ -15,26 +16,23 @@ public class Application extends framework.Application{
 	private final int LARGEUR_FENETRE = 1000;
 	private final int HAUTEUR_FENETRE = 400;
 
-
-	private  String imageNom;
-	private  Image image = null;
 	protected ImageModele imageModele;
 	protected  PerspectiveModele perspectiveModele;
 	protected  PerspectiveModele perspectiveModele2 ;
 
 	protected VueThumbnail vue;
 	protected VuePerspective vue2;
-	protected VuePerspective vue3;
+	protected VuePerspective2 vue3;
 
 	protected  ControleurImage controleurImage;
 	protected  ControleurPerspective controleurPerspective;
-	protected  ControleurPerspective controleurPerspective2;
+	protected ControleurPerspective2 controleurPerspective2;
 
 	@Override
 	protected void initControleurs() {
 		this.controleurImage = new ControleurImage(imageModele, vue);
 		this.controleurPerspective = new ControleurPerspective(perspectiveModele, vue2);
-		this.controleurPerspective2 = new ControleurPerspective(perspectiveModele2, vue3);
+		this.controleurPerspective2 = new ControleurPerspective2(perspectiveModele2, vue3);
 	}
 
 	@Override
@@ -111,7 +109,7 @@ public class Application extends framework.Application{
 
 		this.vue = new VueThumbnail(imageModele, controleurImage);
 		this.vue2 = new VuePerspective(perspectiveModele, controleurPerspective);
-		this.vue3 = new VuePerspective(perspectiveModele2, controleurPerspective2);
+		this.vue3 = new VuePerspective2(perspectiveModele2, controleurPerspective2);
 
 		thumbnail.add(vue);
 		perspective.add(vue2);

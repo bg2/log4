@@ -13,6 +13,7 @@ import javax.swing.filechooser.*;
 
 import application.controleur.ControleurImage;
 import application.controleur.ControleurPerspective;
+import application.controleur.ControleurPerspective2;
 import application.modele.ImageModele;
 import java.awt.event.*;
 //import com.sun.glass.events.KeyEvent;
@@ -21,11 +22,11 @@ import framework.Controleur;
 public class Menu extends JMenuBar {
     private ControleurImage controleurImage;
     private ControleurPerspective controleurPerspective;
-    private ControleurPerspective controleurPerspective2;
+    private ControleurPerspective2 controleurPerspective2;
     /**
      * Constructeur
      */
-    public Menu(ControleurImage controleurImage, ControleurPerspective controleurPerspective, ControleurPerspective
+    public Menu(ControleurImage controleurImage, ControleurPerspective controleurPerspective, ControleurPerspective2
             controleurPerspective2) {
         this.controleurImage = controleurImage;
         this.controleurPerspective = controleurPerspective;
@@ -56,16 +57,33 @@ public class Menu extends JMenuBar {
         itemSauvegarder.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
                 ActionEvent.CTRL_MASK));
 
-        JMenuItem itemDefaire = new JMenuItem("Defaire");
+        JMenuItem itemDefaire = new JMenuItem("Defaire Vue Perspective 1");
         itemDefaire.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
                 ActionEvent.CTRL_MASK));
 
-        initialiserListener(itemOuvrir, itemCharger, itemSauvegarder, itemDefaire);
+        JMenuItem itemDefaire2 = new JMenuItem("Defaire Vue Perspective 2");
+        itemDefaire2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
+                ActionEvent.CTRL_MASK));
+
+        JMenuItem itemRefaire = new JMenuItem("Refaire Vue Perspective 1");
+        itemRefaire.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R,
+                ActionEvent.CTRL_MASK));
+
+        JMenuItem itemRefaire2 = new JMenuItem("Refaire Vue Perspective 2");
+        itemRefaire2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T,
+                ActionEvent.CTRL_MASK));
+
+
+        initialiserListener(itemOuvrir, itemCharger, itemSauvegarder, itemDefaire, itemDefaire2, itemRefaire,
+                itemRefaire2);
 
         menuFichier.add(itemOuvrir);
         menuFichier.add(itemCharger);
         menuFichier.add(itemSauvegarder);
         menuEdition.add(itemDefaire);
+        menuEdition.add(itemRefaire);
+        menuEdition.add(itemDefaire2);
+        menuEdition.add(itemRefaire2);
 
         this.add(menuFichier);
         this.add(menuEdition);
@@ -73,7 +91,8 @@ public class Menu extends JMenuBar {
     }
 
     private void initialiserListener(JMenuItem itemOuvrir, JMenuItem itemCharger, JMenuItem itemSauvegarder,
-                                     JMenuItem itemDefaire){
+                                     JMenuItem itemDefaire, JMenuItem itemDefaire2, JMenuItem itemRefaire,
+                                     JMenuItem itemRefaire2){
 
         itemSauvegarder.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
@@ -83,8 +102,26 @@ public class Menu extends JMenuBar {
 
         itemDefaire.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Defaire");
-controleurPerspective.undo();
+                System.out.println("Defaire Vue 1");
+                controleurPerspective.defaire();
+            }});
+
+        itemDefaire2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Defaire Vue 2");
+                controleurPerspective2.defaire();
+            }});
+
+        itemRefaire.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Refaire Vue 1");
+                controleurPerspective.refaire();
+            }});
+
+        itemRefaire2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Refaire Vue 2");
+                controleurPerspective2.refaire();
             }});
 
 
