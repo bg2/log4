@@ -23,7 +23,7 @@ public class CommandeZoom implements Commande {
     }
 
     @Override
-    public void unexecute() {
+    public void undo() {
         perspectiveModele.setZoomScale(-zoomDeBase);
     }
 }

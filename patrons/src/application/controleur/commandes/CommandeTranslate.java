@@ -26,7 +26,7 @@ public class CommandeTranslate implements Commande {
     }
 
     @Override
-    public void unexecute() {
+    public void undo() {
         perspectiveModele.setPosition(initial.x,initial.y);
     }
 }

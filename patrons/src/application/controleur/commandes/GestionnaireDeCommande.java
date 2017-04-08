@@ -1,9 +1,5 @@
 package application.controleur.commandes;
 
-import application.controleur.ControleurPerspective;
-import application.modele.PerspectiveModele;
-
-import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -59,7 +55,7 @@ public class GestionnaireDeCommande {
     public void defaire1() {
         if(!IsEmptyCommandesFaitesVue1()) {
             Commande derniereCommande = commandesFaitesVue1.pop();
-            derniereCommande.unexecute();
+            derniereCommande.undo();
             commandesAnnuleesVue1.push(derniereCommande);
         }
     }
@@ -76,7 +72,7 @@ public class GestionnaireDeCommande {
     public void defaire2() {
         if(!IsEmptyCommandesFaitesVue2()) {
             Commande derniereCommande = commandesFaitesVue2.pop();
-            derniereCommande.unexecute();
+            derniereCommande.undo();
             commandesAnnuleesVue2.push(derniereCommande);
         }
     }
