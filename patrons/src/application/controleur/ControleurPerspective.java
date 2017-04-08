@@ -87,20 +87,16 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		System.out.println("Controller: acting on Model");
 		positionYfinale = e.getY();
 		positionXfinale = e.getX();
-		modele.moveAction(mouvementX(), mouvementY());
+		modele.moveAction(mouvementX(positionXfinale), mouvementY(positionYfinale));
 
 	}
 	
-	private int mouvementY() {
-		positionYfinale;
-		positionYinitiale;
+	private int mouvementY(int positionXfinale) {
 		deplacement = positionYfinale - positionYinitiale;
 		return deplacement;
 	}
 	
-	private int mouvementX() {
-		positionYfinale;
-		positionYinitiale;
+	private int mouvementX( int positionYfinale) {
 		deplacement = positionYfinale - positionYinitiale;
 		return deplacement;
 	}
