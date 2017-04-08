@@ -49,11 +49,13 @@ public class PerspectiveModele extends Modele {
 			this.zoomIndex *= Math.pow(1.25, Math.abs(zoomScale));
 		else
 			this.zoomIndex /= Math.pow(1.25, Math.abs(zoomScale));
-		try {
-			setChanged();
-			notifyObservers();
-		} catch (final Exception e) {
-		}
+		setChanged();
+		notifyObservers();
+//		try {
+//			setChanged();
+//			notifyObservers();
+//		} catch (final Exception e) {
+//		}
 	}
 
 
@@ -65,24 +67,36 @@ public class PerspectiveModele extends Modele {
 	public int getImageScaledWidth() {
 		return (int) (image.getWidth(null) * zoomIndex);
 	}
-	
-	public void moveAction(final int x, final int y) {
 
-		setPosition(x, y);
-		
+	public int getXcoordinate() {
+		return xPerspective;
 	}
+
+	public int getYcoordinate() {
+		return yPerspective;
+	}
+
+//	public void moveAction(final int x, final int y) {
+//
+//		setPosition(x, y);
+//
+//	}
 
 	
 	public void setPosition(int x, int y) {
 		System.out.println("ici");
-		xPerspective = xPerspective + x;
-		yPerspective = yPerspective + y;
-		try {
-			setChanged();
-			notifyObservers();
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
+//		xPerspective = xPerspective + x;
+//		yPerspective = yPerspective + y;
+		xPerspective = x;
+		yPerspective =  y;
+		setChanged();
+		notifyObservers();
+//		try {
+//			setChanged();
+//			notifyObservers();
+//		} catch (final Exception e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 	

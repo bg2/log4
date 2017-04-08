@@ -24,6 +24,6 @@ public class CommandeZoom implements Commande {
 
     @Override
     public void unexecute() {
-        perspectiveModele.setZoomScale(zoomDeBase);
+        perspectiveModele.setZoomScale(-zoomDeBase);
     }
 }

@@ -1,5 +1,6 @@
 package application.controleur;
 
+import application.controleur.commandes.CommandeTranslate;
 import application.controleur.commandes.CommandeZoom;
 import application.controleur.commandes.GestionnaireDeCommande;
 import application.modele.ImageModele;
@@ -8,6 +9,7 @@ import application.vues.VuePerspective;
 import application.vues.VuePerspective2;
 import framework.Controleur;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
@@ -24,6 +26,7 @@ public class ControleurPerspective2 extends Controleur<PerspectiveModele, VuePer
     int positionYfinale=0;
     int positionXfinale =0;
     int deplacement=0;
+    Point initialClick;
 
     public ControleurPerspective2(PerspectiveModele perspectiveModele, VuePerspective2 vue){
         modele(perspectiveModele);
@@ -82,22 +85,40 @@ public class ControleurPerspective2 extends Controleur<PerspectiveModele, VuePer
 
     }
 
+    public void translate(Point p){
+        CommandeTranslate translate = new CommandeTranslate(modele, p);
+        GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+        gestionnaireDeCommande.execute2(translate);
+    }
+
     @Override
     public void mousePressed(final MouseEvent e) {
-        positionXinitiale = e.getX();
-        positionYinitiale = e.getY();
-
+        initialClick = e.getPoint();
     }
 
     @Override
     public void mouseReleased(final MouseEvent e) {
         System.out.println("Perspective released");
         System.out.println("Controller: acting on Model");
-        positionYfinale = e.getY();
-        positionXfinale = e.getX();
-        modele.moveAction(mouvementX(positionXfinale), mouvementY(positionYfinale));
+        Point p = new Point();
 
+        int thisX = modele.getXcoordinate();
+        int thisY = modele.getYcoordinate();
+
+        // Combien la souris a bouge depuis initialClick
+        int xMoved = (thisX + e.getX()) - (thisX + initialClick.x);
+        int yMoved = (thisY + e.getY()) - (thisY + initialClick.y);
+
+        // Bouge l'image a cette position
+        int X = thisX + xMoved;
+        int Y = thisY + yMoved;
+
+        p.setLocation(X,Y);
+        translate(p);
+        //modele.moveAction(X, Y);
     }
+
+
 
     private int mouvementY(int positionXfinale) {
         deplacement = positionYfinale - positionYinitiale;

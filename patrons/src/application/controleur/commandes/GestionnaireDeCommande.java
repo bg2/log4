@@ -25,24 +25,24 @@ public class GestionnaireDeCommande {
     private Stack<Commande> commandesFaitesVue2 = new Stack<Commande>();
     private Stack<Commande> commandesAnnuleesVue2 = new Stack<Commande>();
 
-    public void execute(Commande commande, int vue) {
-        if(vue==1) {
-            commande.execute();
-            commandesFaitesVue1.push(commande);
-        }
-        else if(vue==2){
-            commande.execute();
-            commandesFaitesVue2.push(commande);
-        }
+
+    public void execute(Commande commande) {
+        commande.execute();
+        System.out.println("COMMADE EXECUTE");
+        commandesFaitesVue1.push(commande);
     }
+
+    public void execute2(Commande commande) {
+        commande.execute();
+        System.out.println("COMMADE EXECUTE");
+        commandesFaitesVue2.push(commande);
+    }
+
 
     public boolean IsEmptyCommandesFaitesVue1() {
         return commandesFaitesVue1.empty();
     }
 
-    /**
-     *
-     */
     public boolean isEmptyCommandesAnnuleesVue1() {
         return commandesAnnuleesVue1.empty();
     }
@@ -51,9 +51,6 @@ public class GestionnaireDeCommande {
         return commandesFaitesVue2.empty();
     }
 
-    /**
-     *
-     */
     public boolean isEmptyCommandesAnnuleesVue2() {
         return commandesAnnuleesVue2.empty();
     }
@@ -92,28 +89,5 @@ public class GestionnaireDeCommande {
         }
     }
 
-    public void execute(Commande commande) {
-        commande.execute();
-        System.out.println("COMMADE EXECUTE");
-        commandesFaitesVue1.push(commande);
-    }
-
-    public void execute2(Commande commande) {
-        commande.execute();
-        System.out.println("COMMADE EXECUTE");
-        commandesFaitesVue2.push(commande);
-    }
-
-
-//
-//    ArrayList<PerspectiveModele> historyList;
-//
-//    public void add(PerspectiveModele perspectiveModele){
-//        historyList.add(perspectiveModele);
-//    }
-//
-//    public PerspectiveModele get(int index){
-//        return historyList.get(index);
-//    }
 
 }
