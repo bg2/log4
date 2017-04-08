@@ -26,44 +26,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionnaireDeCommande.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/GestionnaireDeCommande.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="85" column="5" lean-forward="false" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/framework/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandeTranslate.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/CommandeTranslate.java">
+      <file leaf-file-name="GestionnaireDeCommande.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/GestionnaireDeCommande.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="762">
+              <caret line="85" column="5" lean-forward="false" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControleurPerspective.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ControleurPerspective.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/application/controleur/ControleurPerspective.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
+            <state relative-caret-position="252">
               <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -72,10 +58,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Modele.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/framework/Modele.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/framework/Vue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ControleurPerspective2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/controleur/ControleurPerspective2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
+            <state relative-caret-position="1122">
               <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -84,10 +90,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="VuePerspective2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/vues/VuePerspective2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/vues/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
+            <state relative-caret-position="221">
               <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,31 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Commande.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/Commande.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hashmap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/framework/Hashmap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Controleur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/framework/Controleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -169,16 +165,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/modele/ImageModele.java" />
-        <option value="$PROJECT_DIR$/src/framework/Vue.java" />
         <option value="$PROJECT_DIR$/src/Application.java" />
         <option value="$PROJECT_DIR$/src/framework/HashMap.java" />
         <option value="$PROJECT_DIR$/src/framework/Register.java" />
         <option value="$PROJECT_DIR$/src/framework/Hashmap.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
-        <option value="$PROJECT_DIR$/src/framework/Modele.java" />
         <option value="$PROJECT_DIR$/src/application/Application.java" />
-        <option value="$PROJECT_DIR$/src/framework/Controleur.java" />
-        <option value="$PROJECT_DIR$/src/framework/Application.java" />
         <option value="$PROJECT_DIR$/src/application/vues/VueThumbnail.java" />
         <option value="$PROJECT_DIR$/src/application/modele/ImageModele.java" />
         <option value="$PROJECT_DIR$/src/application/commandes/Commande.java" />
@@ -195,6 +187,10 @@
         <option value="$PROJECT_DIR$/src/application/modele/PerspectiveModele.java" />
         <option value="$PROJECT_DIR$/src/application/controleur/commandes/CommandeZoom.java" />
         <option value="$PROJECT_DIR$/src/application/controleur/commandes/Commande.java" />
+        <option value="$PROJECT_DIR$/src/framework/Controleur.java" />
+        <option value="$PROJECT_DIR$/src/framework/Application.java" />
+        <option value="$PROJECT_DIR$/src/framework/Modele.java" />
+        <option value="$PROJECT_DIR$/src/framework/Vue.java" />
       </list>
     </option>
   </component>
@@ -843,12 +839,12 @@
       <workItem from="1491579638641" duration="2860000" />
       <workItem from="1491603124430" duration="9378000" />
       <workItem from="1491651644557" duration="9265000" />
-      <workItem from="1491663870738" duration="60000" />
+      <workItem from="1491663870738" duration="271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69293000" />
+    <option name="totallyTimeSpent" value="69504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -857,19 +853,21 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286004" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34539813" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3448276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326572" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -880,9 +878,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286004" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1206,26 +1202,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/vues/VuePerspective2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/vues/VuePerspective.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/Vue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="86" column="5" lean-forward="true" selection-start-line="74" selection-start-column="10" selection-end-line="86" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1238,72 +1218,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/Modele.java">
+    <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/CommandeTranslate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/Hashmap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/Controleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/framework/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/vues/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controleur/ControleurPerspective.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controleur/ControleurPerspective2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/GestionnaireDeCommande.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="5" lean-forward="false" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1326,10 +1244,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/CommandeTranslate.java">
+    <entry file="file://$PROJECT_DIR$/src/application/controleur/commandes/GestionnaireDeCommande.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="85" column="5" lean-forward="false" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/vues/VuePerspective2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/framework/Hashmap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/vues/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/framework/Controleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/framework/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/framework/Modele.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/framework/Vue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/controleur/ControleurPerspective2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/controleur/ControleurPerspective.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

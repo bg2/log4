@@ -35,9 +35,6 @@ public abstract class Application {
 
 
 
-//    protected final Hashmap _register = Hashmap.getInstance();
-
-
     public Application() {
         // Create the main frame of the application.
         JFrame frame = new JFrame();

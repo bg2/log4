@@ -8,10 +8,6 @@ import java.util.EventListener;
 public abstract class Controleur<M extends Modele, V extends Vue> implements
         EventListener {
 
-
- //   protected final Hashmap _register = Hashmap.getInstance();
-
-
     protected M modele;
 
 

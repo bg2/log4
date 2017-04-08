@@ -13,8 +13,6 @@ public abstract class Vue<M extends Modele, C extends Controleur> extends
     /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 3205795086954026886L;
 
-    /** The register. */
- //   protected final Hashmap _register = Hashmap.getInstance();
     /**
      * The application.controleur operating on the view.
      */

@@ -5,7 +5,6 @@ import java.util.Observable;
 public class Modele extends Observable {
 
 
-//    protected final Hashmap _register = Hashmap.getInstance();
 
     /////////// PAS NECESSAIRE
 //    public final void changed() {
