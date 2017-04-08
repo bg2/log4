@@ -26,5 +26,7 @@ package application.controleur.commandes;
  */
 public interface Commande {
 
-    public abstract void executer();
+    public abstract void execute();
+    public abstract void unexecute();
+
 }

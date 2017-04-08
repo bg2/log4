@@ -1,12 +1,12 @@
 package application.controleur;
 
+import application.controleur.commandes.CommandeZoom;
+import application.controleur.commandes.GestionnaireDeCommande;
 import application.modele.ImageModele;
 import application.modele.PerspectiveModele;
 import application.vues.VuePerspective;
-import application.vues.VueThumbnail;
 import framework.Controleur;
 
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
@@ -69,9 +69,15 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		zoom(e.getWheelRotation());
 	}
 
-	public void zoom(int e){
-		if (this != null)
-			modele.setZoomScale(e);
+	public void zoom(double e){
+//		if (this != null)
+//			modele.setZoomScale(e);
+
+			//Perspective perspective = perspectives.get(perspectiveIndex);
+			CommandeZoom zoom = new CommandeZoom(modele, e);
+			GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+			gestionnaireDeCommande.execute(zoom);
+
 	}
 	
 	@Override
@@ -101,6 +107,13 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		return deplacement;
 	}
 
+
+	public void undo() {
+		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+		if(!gestionnaireDeCommande.IsEmptyCommandesFaitesVue1()) {
+			gestionnaireDeCommande.defaire1();
+		}
+	}
 }
 
 

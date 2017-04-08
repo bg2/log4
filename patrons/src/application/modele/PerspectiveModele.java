@@ -14,6 +14,8 @@ public class PerspectiveModele extends Modele {
 	private int yPerspective;
 	private double zoomIndex = 1;
 
+
+
 	public Image getImage() {
 		return image;
 	}
@@ -25,6 +27,9 @@ public class PerspectiveModele extends Modele {
 		notifyObservers();
 	}
 
+	public double getZoomIndex(){
+		return zoomIndex;
+	}
 
 	public void ouvrirFichier(File fichierImage) {
 		try {

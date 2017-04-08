@@ -84,7 +84,7 @@ public class Menu extends JMenuBar {
         itemDefaire.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Defaire");
-
+controleurPerspective.undo();
             }});
 
 
