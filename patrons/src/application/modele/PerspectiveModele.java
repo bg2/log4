@@ -4,14 +4,14 @@ import framework.Modele;
 
 import javax.imageio.ImageIO;
 
-
-
 import java.awt.*;
 import java.io.File;
 
 public class PerspectiveModele extends Modele {
 
 	private Image image;
+	private int xPerspective;
+	private int yPerspective;
 	private double zoomIndex = 1;
 
 	public Image getImage() {
@@ -69,16 +69,21 @@ public class PerspectiveModele extends Modele {
 	}
 
 	
-	public void setPosition(final int positionXfinale, final int positionYfinale) {
-		int positionXinitiale = 0;
-		int positionYinitiale = 0;
-		positionXinitiale = positionXinitiale + positionXfinale;
-		positionYinitiale = positionYinitiale + positionXfinale;
+	public void setPosition(int x, int y) {
+		System.out.println("ici");
+		xPerspective = xPerspective + x;
+		yPerspective = yPerspective + y;
 		try {
 			setChanged();
-			this.notifyObservers();
+			notifyObservers();
 		} catch (final Exception e) {
+			e.printStackTrace();
 		}
+		
+	}
+	
+	public void addStep() {
+	
 	}
 
 }
