@@ -8,22 +8,23 @@ import application.modele.PerspectiveModele;
 public class CommandeZoom implements Commande {
 
     private PerspectiveModele perspectiveModele;
-    private double zoomDeBase;
+    private double zoomScale;
     private double facteurDeZoom;
 
     public CommandeZoom(PerspectiveModele perspectiveModele, double facteurDeZoom){
         this.perspectiveModele = perspectiveModele;
-        zoomDeBase = perspectiveModele.getZoomIndex();
+        zoomScale = perspectiveModele.getZoomScale();
         this.facteurDeZoom = facteurDeZoom;
     }
 
     @Override
     public void execute() {
-        perspectiveModele.setZoomScale(zoomDeBase * facteurDeZoom);
+        perspectiveModele.setZoomScale(facteurDeZoom);
     }
 
     @Override
     public void undo() {
-        perspectiveModele.setZoomScale(-zoomDeBase);
+        perspectiveModele.setThisZoomScale(zoomScale);
+
     }
 }

@@ -49,7 +49,8 @@ public class Application extends framework.Application{
 		frame.setResizable(false);
 		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
 
-		Menu menu = new Menu(this.controleurImage, this.controleurPerspective, this.controleurPerspective2);
+		Menu menu = new Menu(this.imageModele, this.perspectiveModele, this.perspectiveModele2,this.controleurImage,
+				this.controleurPerspective, this.controleurPerspective2);
 		frame.getContentPane().add(menu, BorderLayout.NORTH);
 
 		JPanel vueMain = new JPanel();
@@ -61,23 +62,6 @@ public class Application extends framework.Application{
 		this.imageModele.addObserver(vue);
 		this.perspectiveModele.addObserver(vue2);
 		this.perspectiveModele2.addObserver(vue3);
-
-//		perspectiveModele.addObserver(vue2);
-//		perspectiveModele2.addObserver(vue3);
-//****************************************************************
-//		//tell View about Controller (DOESNT WORK???? not jpanel)
-//		vue.addMouseListener(this.controleurImage);
-//
-//		vue2.addMouseListener(this.controleurPerspective);
-//		vue2.addMouseWheelListener(this.controleurPerspective);
-//
-//		vue3.addMouseListener(this.controleurPerspective);
-//		vue3.addMouseWheelListener(this.controleurPerspective);
-//
-//		vue3.addMouseListener(controleurPerspective);
-//		vue3.addMouseWheelListener(controleurPerspective);
-
-
 	}
 
 	private void initVues(JPanel jPanel){
@@ -115,7 +99,7 @@ public class Application extends framework.Application{
 		perspective.add(vue2);
 		perspective2.add(vue3);
 
-		//tell View about Controller (on the jpanel???)
+		//tell View about Controller
 		thumbnail.addMouseListener(this.controleurImage);
 
 		perspective.addMouseListener(this.controleurPerspective);

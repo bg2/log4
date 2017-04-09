@@ -58,7 +58,9 @@ public class ControleurImage extends Controleur<ImageModele, VueThumbnail> imple
 		
 	}
 
-
+public void chargerImageModele(Image image){
+		modele.charger(image);
+}
 
 }
 

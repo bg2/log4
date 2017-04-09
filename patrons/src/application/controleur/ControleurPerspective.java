@@ -8,24 +8,18 @@ import application.modele.PerspectiveModele;
 import application.vues.VuePerspective;
 import framework.Controleur;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.io.File;
 import java.util.EventListener;
-import java.awt.Point;
 
 public class ControleurPerspective extends Controleur<PerspectiveModele, VuePerspective> implements EventListener, MouseListener,
 		MouseWheelListener{
 
 	GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
-
-	int positionXinitiale = 0;
-	int positionYinitiale =0;
-	int positionYfinale=0; 
-	int positionXfinale =0;
-	int deplacement=0;
 	Point initialClick;
 	
 	public ControleurPerspective(PerspectiveModele perspectiveModele, VuePerspective vue){
@@ -38,19 +32,6 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	}
 
 
-
-
-
-//	public void addModel(ImageModele imageModele) {
-//		// TODO Auto-generated method stub
-//
-//	}
-//
-//		public void addModel (PerspectiveModele perspectiveModele){
-//		// TODO Auto-generated method stub
-//
-//	}
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("Perspective");
@@ -60,28 +41,22 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-
 	}
 
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		System.out.println("Mousewheel rotating");
-		zoom(-e.getWheelRotation());
+		zoom(-e.getPreciseWheelRotation());
 	}
 
 	public void zoom(double e){
-//		if (this != null)
-//			modele.setZoomScale(e);
-
-			//Perspective perspective = perspectives.get(perspectiveIndex);
-			CommandeZoom zoom = new CommandeZoom(modele, e);
-			GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
-			gestionnaireDeCommande.execute(zoom);
+		CommandeZoom zoom = new CommandeZoom(modele, e);
+		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+		gestionnaireDeCommande.execute(zoom);
 
 	}
 
@@ -94,8 +69,7 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	
 	@Override
 	public void mousePressed(final MouseEvent e) {
-
-	initialClick = e.getPoint();
+		initialClick = e.getPoint();
 	}
 
 	@Override
@@ -117,20 +91,7 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 
 		p.setLocation(X,Y);
 		translate(p);
-		//modele.moveAction(X, Y);
 	}
-
-	
-	private int mouvementY(int positionXfinale) {
-		deplacement = positionYfinale - positionYinitiale;
-		return deplacement;
-	}
-	
-	private int mouvementX( int positionYfinale) {
-		deplacement = positionYfinale - positionYinitiale;
-		return deplacement;
-	}
-
 
 	public void defaire() {
 			gestionnaireDeCommande.defaire1();
@@ -140,6 +101,10 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	public void refaire() {
 		gestionnaireDeCommande.refaire1();
 	}
-}
 
+	public void chargerPerspectiveModele(PerspectiveModele perspectiveModele, Image image){
+		modele.charger(perspectiveModele);
+		modele.setImage(image);
+	}
+}
 

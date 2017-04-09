@@ -6,13 +6,14 @@ import javax.imageio.ImageIO;
 
 import java.awt.*;
 import java.io.File;
+import java.io.Serializable;
 
-public class PerspectiveModele extends Modele {
+public class PerspectiveModele extends Modele{
 
-	private Image image;
+	private transient Image image;
 	private int xPerspective;
 	private int yPerspective;
-	private double zoomIndex = 1;
+	private double zoomScale = 1;
 
 
 	public Image getImage() {
@@ -26,8 +27,8 @@ public class PerspectiveModele extends Modele {
 		notifyObservers();
 	}
 
-	public double getZoomIndex(){
-		return zoomIndex;
+	public double getZoomScale(){
+		return zoomScale;
 	}
 
 	public void ouvrirFichier(File fichierImage) {
@@ -36,6 +37,9 @@ public class PerspectiveModele extends Modele {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		setPosition(0,0);
+		setThisZoomScale(1);
+
 		setChanged();
 		notifyObservers();
 
@@ -43,29 +47,28 @@ public class PerspectiveModele extends Modele {
 
 	public void chargerImage(){}
 
-
-	public void setZoomScale(double zoomScale) {
-		if (zoomScale > 0)
-			this.zoomIndex *= Math.pow(1.25, Math.abs(zoomScale));
-		else
-			this.zoomIndex /= Math.pow(1.25, Math.abs(zoomScale));
+	public void setThisZoomScale(double zoomScale){
+		this.zoomScale = zoomScale;
 		setChanged();
 		notifyObservers();
-//		try {
-//			setChanged();
-//			notifyObservers();
-//		} catch (final Exception e) {
-//		}
+	}
+
+	public void setZoomScale(double facteurDeZoom) {
+		double delta = 0.05f * facteurDeZoom;
+		this.zoomScale += delta;
+
+		setChanged();
+		notifyObservers();
 	}
 
 
 	public int getImageScaledHeight() {
-		return (int) (image.getHeight(null) * zoomIndex);
+		return (int) (image.getHeight(null) * zoomScale);
 	}
 
 
 	public int getImageScaledWidth() {
-		return (int) (image.getWidth(null) * zoomIndex);
+		return (int) (image.getWidth(null) * zoomScale);
 	}
 
 	public int getXcoordinate() {
@@ -76,32 +79,23 @@ public class PerspectiveModele extends Modele {
 		return yPerspective;
 	}
 
-//	public void moveAction(final int x, final int y) {
-//
-//		setPosition(x, y);
-//
-//	}
 
 	
 	public void setPosition(int x, int y) {
 		System.out.println("ici");
-//		xPerspective = xPerspective + x;
-//		yPerspective = yPerspective + y;
 		xPerspective = x;
 		yPerspective =  y;
 		setChanged();
 		notifyObservers();
-//		try {
-//			setChanged();
-//			notifyObservers();
-//		} catch (final Exception e) {
-//			e.printStackTrace();
-//		}
-		
-	}
-	
-	public void addStep() {
-	
 	}
 
+	public void charger(PerspectiveModele perspectiveModele){
+//		image = perspectiveModele.getImage();
+		xPerspective = perspectiveModele.getXcoordinate();
+		yPerspective = perspectiveModele.getYcoordinate();
+		zoomScale = perspectiveModele.getZoomScale();
+
+		setChanged();
+		notifyObservers();
+	}
 }

@@ -19,13 +19,8 @@ import java.util.EventListener;
 
 public class ControleurPerspective2 extends Controleur<PerspectiveModele, VuePerspective2> implements EventListener, MouseListener,
         MouseWheelListener{
-    GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
 
-    int positionXinitiale = 0;
-    int positionYinitiale =0;
-    int positionYfinale=0;
-    int positionXfinale =0;
-    int deplacement=0;
+    GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
     Point initialClick;
 
     public ControleurPerspective2(PerspectiveModele perspectiveModele, VuePerspective2 vue){
@@ -36,20 +31,6 @@ public class ControleurPerspective2 extends Controleur<PerspectiveModele, VuePer
     public void ouvrirFichier(File fichierImage){
         modele.ouvrirFichier(fichierImage);
     }
-
-//
-//
-//
-//
-//    public void addModel(ImageModele imageModele) {
-//        // TODO Auto-generated method stub
-//
-//    }
-//
-//    public void addModel (PerspectiveModele perspectiveModele){
-//        // TODO Auto-generated method stub
-//
-//    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -71,14 +52,10 @@ public class ControleurPerspective2 extends Controleur<PerspectiveModele, VuePer
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         System.out.println("Mousewheel rotating");
-        zoom(-e.getWheelRotation());
+        zoom(-e.getPreciseWheelRotation());
     }
 
     public void zoom(double e){
-//		if (this != null)
-//			modele.setZoomScale(e);
-
-        //Perspective perspective = perspectives.get(perspectiveIndex);
         CommandeZoom zoom = new CommandeZoom(modele, e);
         GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
         gestionnaireDeCommande.execute2(zoom);
@@ -115,21 +92,7 @@ public class ControleurPerspective2 extends Controleur<PerspectiveModele, VuePer
 
         p.setLocation(X,Y);
         translate(p);
-        //modele.moveAction(X, Y);
     }
-
-
-
-    private int mouvementY(int positionXfinale) {
-        deplacement = positionYfinale - positionYinitiale;
-        return deplacement;
-    }
-
-    private int mouvementX( int positionYfinale) {
-        deplacement = positionYfinale - positionYinitiale;
-        return deplacement;
-    }
-
 
     public void defaire() {
             gestionnaireDeCommande.defaire2();
@@ -137,6 +100,11 @@ public class ControleurPerspective2 extends Controleur<PerspectiveModele, VuePer
 
     public void refaire() {
         gestionnaireDeCommande.refaire2();
+    }
+
+    public void chargerPerspectiveModele(PerspectiveModele perspectiveModele, Image image){
+        modele.charger(perspectiveModele);
+        modele.setImage(image);
     }
 }
 
