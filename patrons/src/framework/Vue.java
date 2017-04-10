@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: Vue.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -26,37 +26,43 @@ import javax.swing.*;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * Classe abstraite Vue de le cadre.
+ *
+ * @param <M> Le Modele
+ * @param <C> Le controleur
+ */
 public abstract class Vue<M extends Modele, C extends Controleur> extends
         JPanel implements Observer {
 
-    /** The Constant serialVersionUID. */
+    /** Constante serialVersionUID. */
     private static final long serialVersionUID = 3205795086954026886L;
 
     /**
-     * The application.controleur operating on the view.
+     * Controleur opérant sur la vue.
      */
     protected C controleur;
 
     /**
-     * The application.modele that the view operates on.
+     * Modele que la vue fonctionne sur.
      */
     protected M modele;
 
     /**
-     * Initialize the view.
+     * Retourne le controleur
+     *
+     * @return controleur Le controleur
      */
-    public Vue() {
-        // Run view initialization such as loading controleurs and modeles.
-        this.initialize();
-    }
-
-
     protected final C controleur() {
         return this.controleur;
     }
 
 
-    @SuppressWarnings("unchecked")
+    /**
+     * Set le controleur. Definissez le modele sur le controleur si le modele existe
+     *
+     * @param controleur Le controleur
+     */
     protected final void controleur(final C controleur) {
         if (controleur == null)
             return;
@@ -64,48 +70,43 @@ public abstract class Vue<M extends Modele, C extends Controleur> extends
         this.controleur = controleur;
         this.controleur.vue(this);
 
-        // Set the application.modele on the application.controleur if the application.modele eixsts.
+
         if (this.modele != null)
             this.controleur.modele(this.modele);
     }
 
-
-    protected void initialize() {
-        ; // Do nothing by default.
-    }
-
-
+    /**
+     * Retourne le modele
+     *
+     * @return modele Le modele
+     */
     protected final M modele() {
         return this.modele;
     }
 
 
-    @SuppressWarnings("unchecked")
+    /**
+     * Set le modele. Definissez le modele sur le controleur si le controleur existe.
+     *
+     * @param modele le modele
+     */
     protected final void modele(final M modele) {
         if (modele == null)
             return;
 
-        // If a application.modele has already been associated with the view, remove the view
-        // as an observer from the old application.modele.
-        // if (this.application.modele != null)
-        // this.application.modele.deleteObserver(this);
-
         this.modele = modele;
 
-        // Add the view as an observer of the application.modele.
-        // this.application.modele.addObserver(this);
-
-        // Set the application.modele on the application.controleur if the application.controleur exists.
         if (this.controleur != null)
             this.controleur.modele(this.modele);
     }
 
 
-    protected void update(final M modele, final Object value) {
-        throw new UnsupportedOperationException();
-    }
-
-
+    /**
+     * Cette méthode est appelée chaque fois que l'objet observé est modifié.
+     *
+     * @param observable L'objet observable
+     * @param object Objet pouvant être transmis
+     */
     @Override
     public void update(final Observable observable, final Object object) {
         this.update(observable, object);

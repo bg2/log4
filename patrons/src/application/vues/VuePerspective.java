@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: VuePerspective.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -46,7 +46,7 @@ public class VuePerspective extends Vue<PerspectiveModele, ControleurPerspective
     /**
      * Affichage de la perspective
      *
-     * @param g Curseur
+     * @param g Objet de Graphics
      */
     @Override
     public void paint(final Graphics g) {

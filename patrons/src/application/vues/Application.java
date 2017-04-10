@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: Application.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -24,7 +24,6 @@ package application.vues;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-
 import application.controleur.ControleurImage;
 import application.controleur.ControleurPerspective;
 import application.controleur.ControleurPerspective2;

@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: ControleurImage.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -24,12 +24,6 @@ package application.controleur;
 import application.modele.ImageModele;
 import application.vues.VueThumbnail;
 import framework.Controleur;
-import framework.Modele;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

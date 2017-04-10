@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: ControleurPerspective.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -25,11 +25,9 @@ import application.controleur.commandes.Commande;
 import application.controleur.commandes.CommandeTranslate;
 import application.controleur.commandes.CommandeZoom;
 import application.controleur.commandes.GestionnaireDeCommande;
-import application.modele.ImageModele;
 import application.modele.PerspectiveModele;
 import application.vues.VuePerspective;
 import framework.Controleur;
-
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

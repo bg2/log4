@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: Modele.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -24,7 +24,11 @@ package framework;
 import java.io.Serializable;
 import java.util.Observable;
 
-public class Modele extends Observable implements Serializable {
+/**
+ *  Classe modele dans le framework qui herite du Observable et qui implemente Serializable qui la permet de faire
+ *  une sauvegarde
+ */
+public abstract class Modele extends Observable implements Serializable {
 
 }
 

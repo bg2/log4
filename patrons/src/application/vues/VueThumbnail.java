@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: VueThumbnail.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -24,7 +24,6 @@ package application.vues;
 import application.controleur.ControleurImage;
 import application.modele.ImageModele;
 import framework.Vue;
-
 import java.awt.*;
 import java.util.Observable;
 
@@ -47,7 +46,7 @@ public class VueThumbnail extends Vue<ImageModele, ControleurImage> {
     /**
      * Affichage de l'image
      *
-     * @param g Curseur
+     * @param g Objet de Graphics
      */
     @Override
     public void paint(final Graphics g) {

@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: Menu.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -30,12 +30,10 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.*;
-
 import application.controleur.ControleurImage;
 import application.controleur.ControleurPerspective;
 import application.controleur.ControleurPerspective2;
 import application.modele.ImageModele;
-
 import java.awt.event.*;
 import java.util.ArrayList;
 import application.modele.PerspectiveModele;
@@ -256,7 +254,7 @@ public class Menu extends JMenuBar {
     }
 
     /**
-     * Sauvegarde les perspectives dans un fichier
+     * Sauvegarde les perspectives et l'image dans un fichier
      */
     public void save() {
 

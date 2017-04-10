@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: Application.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -23,66 +23,43 @@ package framework;
 
 import javax.swing.*;
 
-
 /**
- * The {@link Application} class describes a complete MVC application.
- *
- * <p>
- * The class takes care of constructing the main application frame and passing
- * it on to subclasses. To create a new MVC application one must therefore
- * extend the {@link Application} class and implement the
- * {@link #start(JFrame)} method:
- *
- * <pre>
- * public final class MyApp extends application.vues.Application {
- *   protected void start(final JFrame frame) {
- *     frame.getContentPane().add(...);
- *   }
- *
- *   public static void main(final String[] args) {
- *     new MyApp();
- *   }
- * }
- * </pre>
- *
- * @see <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">
- *      http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller</a>
+ * Classe qui prend soin de faire l'application principale. Une nouvelle application MVC étendra cette classe.
  */
 public abstract class Application {
 
 
-
+    /**
+     * Constructeur de la classe Application
+     */
     public Application() {
-        // Create the main frame of the application.
         JFrame frame = new JFrame();
 
-        // Exit the application when the main frame is closed.
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Start the application.
         initModeles();
         initControleurs();
 
         this.start(frame);
 
-        // Make the application frame visible.
         frame.setVisible(true);
     }
 
-
+    /**
+     * Initialiser les contrôleurs
+     */
     protected abstract void initControleurs();
 
-
-     protected abstract void initModeles();
+    /**
+     * Initialiser les modeles
+     */
+    protected abstract void initModeles();
 
     /**
-     * Start the {@link Application}.
+     * Commencer l'application
      *
-     * <p>
-     * This method is called as part of the {@link Application} initialization.
-     * @param frame The main frame of the {@link Application}.
+     * @param frame Le frame de l'application
      */
-
     protected abstract void start(final JFrame frame);
 
 

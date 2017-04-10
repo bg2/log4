@@ -3,7 +3,7 @@
  Session: H2017
  Groupe: 02
  Projet: Laboratoire #4
- Ã‰tudiant(e)s:
+ Étudiant(e)s:
  Alexandre Trepanier
  Vanessa Baquero
  Nam Vu Khanh
@@ -11,7 +11,7 @@
  Professeur : Francis Cardinal
  Nom du fichier: Main.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************

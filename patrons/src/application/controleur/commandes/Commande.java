@@ -3,15 +3,15 @@
  Session: H2017
  Groupe: 02
  Projet: Laboratoire #4
- Étudiant(e)s:
+ �tudiant(e)s:
  Alexandre Trepanier
  Vanessa Baquero
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: Commande.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -28,7 +28,7 @@ package application.controleur.commandes;
 public interface Commande {
 
     /**
-     * Exécute la commande
+     * Execute la commande
      */
     void execute();
 

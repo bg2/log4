@@ -9,9 +9,9 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: .java
+ Nom du fichier: ImageModele.java
  Date cree: 2017-03-22
- Date dern. modif. 2017-03-
+ Date dern. modif. 2017-03-31
  *******************************************************
  Historique des modifications
  *******************************************************
@@ -23,7 +23,6 @@ package application.modele;
 
 
 import framework.Modele;
-
 import javax.imageio.ImageIO;
 import java.awt.Image;
 import java.io.File;
