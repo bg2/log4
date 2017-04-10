@@ -1,5 +1,6 @@
 package application.controleur;
 
+import application.controleur.commandes.Commande;
 import application.controleur.commandes.CommandeTranslate;
 import application.controleur.commandes.CommandeZoom;
 import application.controleur.commandes.GestionnaireDeCommande;
@@ -16,28 +17,39 @@ import java.awt.event.MouseWheelListener;
 import java.io.File;
 import java.util.EventListener;
 
+/**
+ * Classe controleur de la première perspective
+ */
 public class ControleurPerspective extends Controleur<PerspectiveModele, VuePerspective> implements EventListener, MouseListener,
 		MouseWheelListener{
 
-	GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
-	Point initialClick;
-	
+	private GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+	private Point initialClick;
+
+	/**
+	 * Constructeur
+	 *
+	 * @param perspectiveModele Modèle de la perspective
+	 * @param vue Vue de la perspective
+	 */
 	public ControleurPerspective(PerspectiveModele perspectiveModele, VuePerspective vue){
+
 		modele(perspectiveModele);
 		vue(vue);
 	}
 
+	/**
+	 * Ouvre le fichier image
+	 *
+	 * @param fichierImage Le fichier image
+	 */
 	public void ouvrirFichier(File fichierImage){
 		modele.ouvrirFichier(fichierImage);
 	}
 
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("Perspective");
-		System.out.println("Controller: acting on Model");
 	}
-
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
@@ -49,24 +61,9 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
-		System.out.println("Mousewheel rotating");
 		zoom(-e.getPreciseWheelRotation());
 	}
 
-	public void zoom(double e){
-		CommandeZoom zoom = new CommandeZoom(modele, e);
-		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
-		gestionnaireDeCommande.execute(zoom);
-
-	}
-
-	public void translate(Point p){
-		CommandeTranslate translate = new CommandeTranslate(modele, p);
-		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
-		gestionnaireDeCommande.execute(translate);
-	}
-
-	
 	@Override
 	public void mousePressed(final MouseEvent e) {
 		initialClick = e.getPoint();
@@ -74,8 +71,7 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 
 	@Override
 	public void mouseReleased(final MouseEvent e) {
-		System.out.println("Perspective released");
-		System.out.println("Controller: acting on Model");
+
 		Point p = new Point();
 
 		int thisX = modele.getXcoordinate();
@@ -93,15 +89,50 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 		translate(p);
 	}
 
+	/**
+	 * Méthode de zoom
+	 *
+	 * @param facteurZoom Le niveau de zoom appliqué
+	 */
+	public void zoom(double facteurZoom){
+
+		Commande zoom = new CommandeZoom(modele, facteurZoom);
+		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+		gestionnaireDeCommande.execute(zoom);
+	}
+
+	/**
+	 * Méthode de translation
+	 *
+	 * @param p La nouvelle coordonnée de l'image
+	 */
+	public void translate(Point p){
+
+		Commande translate = new CommandeTranslate(modele, p);
+		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+		gestionnaireDeCommande.execute(translate);
+	}
+
+	/**
+	 * Annule la dernière commande
+	 */
 	public void defaire() {
 			gestionnaireDeCommande.defaire1();
 	}
 
-
+	/**
+	 * Refait la dernière commande annulée
+	 */
 	public void refaire() {
 		gestionnaireDeCommande.refaire1();
 	}
 
+	/**
+	 * Charge les perspectives sauvegardées
+	 *
+	 * @param perspectiveModele Modèle de la perspective
+	 * @param image Image des perspectives chargées
+	 */
 	public void chargerPerspectiveModele(PerspectiveModele perspectiveModele, Image image){
 		modele.charger(perspectiveModele);
 		modele.setImage(image);

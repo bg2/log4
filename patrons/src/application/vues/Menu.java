@@ -1,9 +1,5 @@
 package application.vues;
 
-/**
- * Created by Khoi on 2017-04-05.
- */
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,11 +16,13 @@ import application.modele.ImageModele;
 
 import java.awt.event.*;
 import java.util.ArrayList;
-//import com.sun.glass.events.KeyEvent;
 import application.modele.PerspectiveModele;
-import framework.Controleur;
 
+/**
+ * Classe pour le menu de l'application
+ */
 public class Menu extends JMenuBar {
+
     private ControleurImage controleurImage;
     private ControleurPerspective controleurPerspective;
     private ControleurPerspective2 controleurPerspective2;
@@ -35,26 +33,34 @@ public class Menu extends JMenuBar {
 
     /**
      * Constructeur
+     *
+     * @param imageModele Modèle du thumbnail
+     * @param perspectiveModele Modèle de la première perspective
+     * @param perspectiveModele2 Modèle de la deuxième perspective
+     * @param controleurImage Controleur du thumbnail
+     * @param controleurPerspective Controleur de la première perspective
+     * @param controleurPerspective2 Controleur de la deuxième perspective
      */
     public Menu(ImageModele imageModele, PerspectiveModele perspectiveModele, PerspectiveModele perspectiveModele2,
-                ControleurImage controleurImage, ControleurPerspective controleurPerspective, ControleurPerspective2
-                        controleurPerspective2) {
+                ControleurImage controleurImage, ControleurPerspective controleurPerspective,
+                ControleurPerspective2 controleurPerspective2) {
+
         this.imageModele = imageModele;
         this.perspectiveModele = perspectiveModele;
         this.perspectiveModele2 = perspectiveModele2;
         this.controleurImage = controleurImage;
         this.controleurPerspective = controleurPerspective;
         this.controleurPerspective2 = controleurPerspective2;
-        System.out.println("Menu createur");
-        initialiserMenu();
 
+        initialiserMenu();
     }
 
+    /**
+     * Initialise le menu
+     */
     private void initialiserMenu() {
 
-        System.out.println("Menu Init");
         final JMenuBar menuBar = new JMenuBar();
-
 
         JMenu menuFichier = new JMenu("Fichier");
         JMenu menuEdition = new JMenu("Edition");
@@ -101,44 +107,49 @@ public class Menu extends JMenuBar {
 
         this.add(menuFichier);
         this.add(menuEdition);
-
     }
 
+    /**
+     * Initialise les écouteurs
+     *
+     * @param itemOuvrir Option ouvrir une image
+     * @param itemCharger Option charger les perspectives
+     * @param itemSauvegarder Option sauvegarder les perspectives
+     * @param itemDefaire Option défaire la première perspective
+     * @param itemDefaire2 Option défaire la deuxième perspective
+     * @param itemRefaire Option refaire la première perspective
+     * @param itemRefaire2 Option refaire la deuxième perspective
+     */
     private void initialiserListener(JMenuItem itemOuvrir, JMenuItem itemCharger, JMenuItem itemSauvegarder,
                                      JMenuItem itemDefaire, JMenuItem itemDefaire2, JMenuItem itemRefaire,
                                      JMenuItem itemRefaire2) {
 
         itemSauvegarder.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Sauvegarder");
                 save();
             }
         });
 
         itemDefaire.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Defaire Vue 1");
                 controleurPerspective.defaire();
             }
         });
 
         itemDefaire2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Defaire Vue 2");
                 controleurPerspective2.defaire();
             }
         });
 
         itemRefaire.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Refaire Vue 1");
                 controleurPerspective.refaire();
             }
         });
 
         itemRefaire2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Refaire Vue 2");
                 controleurPerspective2.refaire();
             }
         });
@@ -146,20 +157,20 @@ public class Menu extends JMenuBar {
 
         itemOuvrir.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Ouvrir");
                 choisirFichierAOuvrir();
-
             }
         });
 
         itemCharger.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Charger");
                 charger();
             }
         });
     }
 
+    /**
+     * Ouvre l'explorateur et permet d'ouvrir une image
+     */
     public void choisirFichierAOuvrir() {
         JFileChooser fc = new JFileChooser();
 
@@ -178,13 +189,14 @@ public class Menu extends JMenuBar {
             controleurImage.ouvrirFichier(fichierImage);
             controleurPerspective.ouvrirFichier(fichierImage);
             controleurPerspective2.ouvrirFichier(fichierImage);
-        } else if (response == JFileChooser.CANCEL_OPTION) {
-            System.out.println("L'opération a été annulée.");
         }
-
     }
 
+    /**
+     * Ouvre l'explorateur et permet de charger des perspectives sauvegardées
+     */
     public void charger() {
+
         JFileChooser fc = new JFileChooser();
 
         javax.swing.filechooser.FileFilter serFilter = new FileNameExtensionFilter(
@@ -218,12 +230,12 @@ public class Menu extends JMenuBar {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } else if (response == JFileChooser.CANCEL_OPTION) {
-            System.out.println("L'opération a été annulée.");
         }
-
     }
 
+    /**
+     * Sauvegarde les perspectives dans un fichier
+     */
     public void save() {
 
         // open dialog for choosing a directory first
@@ -244,10 +256,7 @@ public class Menu extends JMenuBar {
         if (response == JFileChooser.APPROVE_OPTION) {
             String path = fc.getCurrentDirectory().toString() + "\\"
                     + fc.getSelectedFile().getName();
-
-            System.out.println("Le fichier a ete sauvegarde dans: " + path);
         } else {
-            System.out.println("L'opération a été annulée.");
             return;
         }
 
@@ -269,8 +278,7 @@ public class Menu extends JMenuBar {
 
             if (image != null)
               ImageIO.write((BufferedImage) image, "jpg", oos);
-            else
-                System.out.println("Rien a sauvegarder!");
+
             oos.writeObject(data);
             oos.close();
             fos.close();

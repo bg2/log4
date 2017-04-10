@@ -10,7 +10,9 @@ import application.controleur.ControleurPerspective2;
 import application.modele.PerspectiveModele;
 import application.modele.ImageModele;
 
-
+/**
+ * Classe de l'application (ses vues, modèles et controleurs)
+ */
 public class Application extends framework.Application{
 
 	private final int LARGEUR_FENETRE = 1000;
@@ -28,6 +30,9 @@ public class Application extends framework.Application{
 	protected  ControleurPerspective controleurPerspective;
 	protected ControleurPerspective2 controleurPerspective2;
 
+	/**
+	 * Initialise les controleurs
+	 */
 	@Override
 	protected void initControleurs() {
 		this.controleurImage = new ControleurImage(imageModele, vue);
@@ -35,6 +40,9 @@ public class Application extends framework.Application{
 		this.controleurPerspective2 = new ControleurPerspective2(perspectiveModele2, vue3);
 	}
 
+	/**
+	 * Initialise les modèles
+	 */
 	@Override
 	protected void initModeles() {
 		this.imageModele = new ImageModele();
@@ -42,9 +50,14 @@ public class Application extends framework.Application{
 		this.perspectiveModele2 = new PerspectiveModele();
 	}
 
+	/**
+	 * Démarre l'application
+	 *
+	 * @param frame The main frame of the {@link Application}.
+	 */
 	@Override
 	protected void start(JFrame frame) {
-		System.out.println("Starting the application...");
+
 		frame.setTitle("Lab 4 : Les patrons");
 		frame.setResizable(false);
 		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
@@ -64,6 +77,11 @@ public class Application extends framework.Application{
 		this.perspectiveModele2.addObserver(vue3);
 	}
 
+	/**
+	 * Initialise les vues
+	 *
+	 * @param jPanel Panel principal
+	 */
 	private void initVues(JPanel jPanel){
 		JPanel vueMain = jPanel;
 

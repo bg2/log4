@@ -7,12 +7,27 @@ import framework.Vue;
 import java.awt.*;
 import java.util.Observable;
 
+/**
+ * Classe pour la vue globale de l'image
+ */
 public class VueThumbnail extends Vue<ImageModele, ControleurImage> {
 
+    /**
+     * Constructeur
+     *
+     * @param imageModele Modele de l'image
+     * @param controleurImage Controleur de l'image
+     */
     public VueThumbnail(ImageModele imageModele, ControleurImage controleurImage){
         modele(imageModele);
         controleur(controleurImage);
     }
+
+    /**
+     * Affichage de l'image
+     *
+     * @param g Curseur
+     */
     @Override
     public void paint(final Graphics g) {
         super.paintComponent(g);
@@ -24,15 +39,20 @@ public class VueThumbnail extends Vue<ImageModele, ControleurImage> {
         } catch (final NullPointerException e) {
         }
     }
+
     @Override
     protected void render() {
 
     }
 
-
+    /**
+     * Met à jour l'affichage
+     *
+     * @param model Le modele observé
+     * @param value Valeur passée par le modèle
+     */
     @Override
     public void update(final Observable model, final Object value) {
         repaint();
-
     }
 }

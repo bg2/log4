@@ -22,11 +22,19 @@
 package application.controleur.commandes;
 
 /**
+ * Interface de commande
  * Created by Khoi on 2017-04-07.
  */
 public interface Commande {
 
-    public abstract void execute();
-    public abstract void undo();
+    /**
+     * Exécute la commande
+     */
+    void execute();
+
+    /**
+     * Annule la commande
+     */
+    void undo();
 
 }

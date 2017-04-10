@@ -3,7 +3,7 @@ package application.controleur.commandes;
 import application.modele.PerspectiveModele;
 
 /**
- * Created by Khoi on 2017-04-07.
+ * Classe de la commande zoom
  */
 public class CommandeZoom implements Commande {
 
@@ -11,6 +11,12 @@ public class CommandeZoom implements Commande {
     private double zoomScale;
     private double facteurDeZoom;
 
+    /**
+     * Constructeur
+     *
+     * @param perspectiveModele Modèle de la perspective
+     * @param facteurDeZoom Le nouveau niveau de zoom
+     */
     public CommandeZoom(PerspectiveModele perspectiveModele, double facteurDeZoom){
         this.perspectiveModele = perspectiveModele;
         zoomScale = perspectiveModele.getZoomScale();
@@ -25,6 +31,5 @@ public class CommandeZoom implements Commande {
     @Override
     public void undo() {
         perspectiveModele.setThisZoomScale(zoomScale);
-
     }
 }

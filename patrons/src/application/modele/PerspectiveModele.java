@@ -8,6 +8,9 @@ import java.awt.*;
 import java.io.File;
 import java.io.Serializable;
 
+/**
+ * Classe modèle des perspectives
+ */
 public class PerspectiveModele extends Modele{
 
 	private transient Image image;
@@ -15,6 +18,40 @@ public class PerspectiveModele extends Modele{
 	private int yPerspective;
 	private double zoomScale = 1;
 
+
+	/**
+	 * Ouvre l'image sélectionnée
+	 *
+	 * @param fichierImage Le fichier de l'image
+	 */
+	public void ouvrirFichier(File fichierImage) {
+		try {
+			image = ImageIO.read(fichierImage);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		setPosition(0,0);
+		setThisZoomScale(1);
+
+		setChanged();
+		notifyObservers();
+	}
+
+	/**
+	 * Change les attributs de la perspective pour ceux chargés
+	 *
+	 * @param perspectiveModele Le modèle chargé
+	 */
+	public void charger(PerspectiveModele perspectiveModele){
+
+		xPerspective = perspectiveModele.getXcoordinate();
+		yPerspective = perspectiveModele.getYcoordinate();
+		zoomScale = perspectiveModele.getZoomScale();
+
+		setChanged();
+		notifyObservers();
+	}
 
 	public Image getImage() {
 		return image;
@@ -31,22 +68,6 @@ public class PerspectiveModele extends Modele{
 		return zoomScale;
 	}
 
-	public void ouvrirFichier(File fichierImage) {
-		try {
-			image = ImageIO.read(fichierImage);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		setPosition(0,0);
-		setThisZoomScale(1);
-
-		setChanged();
-		notifyObservers();
-
-	}
-
-	public void chargerImage(){}
-
 	public void setThisZoomScale(double zoomScale){
 		this.zoomScale = zoomScale;
 		setChanged();
@@ -61,11 +82,9 @@ public class PerspectiveModele extends Modele{
 		notifyObservers();
 	}
 
-
 	public int getImageScaledHeight() {
 		return (int) (image.getHeight(null) * zoomScale);
 	}
-
 
 	public int getImageScaledWidth() {
 		return (int) (image.getWidth(null) * zoomScale);
@@ -79,22 +98,10 @@ public class PerspectiveModele extends Modele{
 		return yPerspective;
 	}
 
-
-	
 	public void setPosition(int x, int y) {
-		System.out.println("ici");
+
 		xPerspective = x;
 		yPerspective =  y;
-		setChanged();
-		notifyObservers();
-	}
-
-	public void charger(PerspectiveModele perspectiveModele){
-//		image = perspectiveModele.getImage();
-		xPerspective = perspectiveModele.getXcoordinate();
-		yPerspective = perspectiveModele.getYcoordinate();
-		zoomScale = perspectiveModele.getZoomScale();
-
 		setChanged();
 		notifyObservers();
 	}
