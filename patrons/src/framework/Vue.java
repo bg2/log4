@@ -4,9 +4,6 @@ import javax.swing.*;
 import java.util.Observable;
 import java.util.Observer;
 
-/**
- * Created by Khoi on 2017-04-05.
- */
 public abstract class Vue<M extends Modele, C extends Controleur> extends
         JPanel implements Observer {
 
@@ -29,9 +26,6 @@ public abstract class Vue<M extends Modele, C extends Controleur> extends
     public Vue() {
         // Run view initialization such as loading controleurs and modeles.
         this.initialize();
-
-        // Render the view now that the controleurs and modeles are available.
-        this.render();
     }
 
 
@@ -83,9 +77,6 @@ public abstract class Vue<M extends Modele, C extends Controleur> extends
         if (this.controleur != null)
             this.controleur.modele(this.modele);
     }
-
-
-    protected abstract void render();
 
 
     protected void update(final M modele, final Object value) {

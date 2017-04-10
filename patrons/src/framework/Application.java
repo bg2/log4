@@ -1,10 +1,27 @@
+/******************************************************
+ Cours:   LOG121
+ Session: H2017
+ Groupe: 02
+ Projet: Laboratoire #4
+ Étudiant(e)s:
+ Alexandre Trepanier
+ Vanessa Baquero
+ Nam Vu Khanh
+ Khoi Tran-Quang
+ Professeur : Francis Cardinal
+ Nom du fichier: .java
+ Date cree: 2017-03-22
+ Date dern. modif. 2017-03-
+ *******************************************************
+ Historique des modifications
+ *******************************************************
+ *@author Khoi Tran-Quang
+2017-03-22	Version initiale
+ *******************************************************/
+
 package framework;
 
 import javax.swing.*;
-
-/**
- * Created by Khoi on 2017-04-05.
- */
 
 
 /**
@@ -39,25 +56,14 @@ public abstract class Application {
         // Create the main frame of the application.
         JFrame frame = new JFrame();
 
-        // And register it.
- //       _register.add("window.frame", _frame);
-
         // Exit the application when the main frame is closed.
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Start the application.
         initModeles();
-    initControleurs();
+        initControleurs();
 
         this.start(frame);
-//        // Initiates the models
-        //  initModeles();
-//
-//        // Initiates the controllers
-//        initControllers();
-//
-//        // Start the application.
-//        start();
 
         // Make the application frame visible.
         frame.setVisible(true);
@@ -79,5 +85,5 @@ public abstract class Application {
 
     protected abstract void start(final JFrame frame);
 
-   // protected abstract void initApplication();
+
 }
