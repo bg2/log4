@@ -21,7 +21,7 @@
 
 package application.controleur;
 
-import application.controleur.commandes.Commande;
+import application.controleur.commandes.ICommande;
 import application.controleur.commandes.CommandeTranslate;
 import application.controleur.commandes.CommandeZoom;
 import application.controleur.commandes.GestionnaireDeCommande;
@@ -115,7 +115,7 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	 */
 	public void zoom(double facteurZoom){
 
-		Commande zoom = new CommandeZoom(modele, facteurZoom);
+		ICommande zoom = new CommandeZoom(modele, facteurZoom);
 		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
 		gestionnaireDeCommande.execute(zoom);
 	}
@@ -127,7 +127,7 @@ public class ControleurPerspective extends Controleur<PerspectiveModele, VuePers
 	 */
 	public void translate(Point p){
 
-		Commande translate = new CommandeTranslate(modele, p);
+		ICommande translate = new CommandeTranslate(modele, p);
 		GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
 		gestionnaireDeCommande.execute(translate);
 	}

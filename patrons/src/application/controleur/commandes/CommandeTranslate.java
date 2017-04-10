@@ -28,7 +28,7 @@ import java.awt.*;
 /**
  * Classe pour la commande de translation
  */
-public class CommandeTranslate implements Commande {
+public class CommandeTranslate implements ICommande {
 
     private PerspectiveModele perspectiveModele;
     private Point initial = new Point();

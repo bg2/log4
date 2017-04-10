@@ -9,7 +9,7 @@
  Nam Vu Khanh
  Khoi Tran-Quang
  Professeur : Francis Cardinal
- Nom du fichier: Commande.java
+ Nom du fichier: ICommande.java
  Date cree: 2017-03-22
  Date dern. modif. 2017-03-31
  *******************************************************
@@ -25,7 +25,7 @@ package application.controleur.commandes;
  * Interface de commande
  * Created by Khoi on 2017-04-07.
  */
-public interface Commande {
+public interface ICommande {
 
     /**
      * Execute la commande

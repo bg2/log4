@@ -26,7 +26,7 @@ import application.modele.PerspectiveModele;
 /**
  * Classe de la commande zoom
  */
-public class CommandeZoom implements Commande {
+public class CommandeZoom implements ICommande {
 
     private PerspectiveModele perspectiveModele;
     private double zoomScale;
